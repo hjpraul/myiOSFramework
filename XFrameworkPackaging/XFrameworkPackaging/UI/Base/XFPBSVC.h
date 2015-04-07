@@ -1,6 +1,6 @@
 //
-//  LHBSVC.h
-//  CHLightHandle
+//  XFPBSVC.h
+//  XFrameworkPackaging
 //
 //  Created by hjpraul on 15/1/17.
 //  Copyright (c) 2015年 hjpraul. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LHBSVC : UIViewController
+@interface XFPBSVC : UIViewController
 // 设置左边按钮
 - (void)setLeftButtonWithTitle:(NSString *)title
                          image:(UIImage *)image

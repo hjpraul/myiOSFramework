@@ -1,5 +1,5 @@
 //
-//  LHSlidingDrawerView.h
+//  XFPSlidingDrawerView.h
 //  CHLightHandle
 //
 //  Created by hjpraul on 15/3/3.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LHSlidingDrawerView : UIView
+@interface XFPSlidingDrawerView : UIView
 @property (strong, nonatomic) UIViewController *containerVc;
 - (void)addToVC:(UIViewController *)vc;
 - (void)show;

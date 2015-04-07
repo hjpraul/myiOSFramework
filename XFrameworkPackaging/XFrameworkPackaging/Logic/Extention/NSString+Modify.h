@@ -11,16 +11,13 @@
 @interface NSString (Modify)
 
 // 是否是合法电话号码
-- (BOOL)isLegalPhoneNumber;
+- (BOOL)isLegalPhoneNum;
 
 // 是否是合法电子邮箱地址
-- (BOOL)isLegalEmailAddress;
+- (BOOL)isLegalEmailAddr;
 
 // 判断密码格式是否正确
-- (BOOL)isLegalPassword;
-
-///得到当前的时间
-+(NSString*)dateToNSString;
+- (BOOL)isLegalPasswd;
 
 // 判断是否是整型
 - (BOOL)isPureInt;

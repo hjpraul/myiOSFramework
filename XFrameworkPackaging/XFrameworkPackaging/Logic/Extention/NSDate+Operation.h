@@ -1,5 +1,5 @@
 //
-//  NSDate+Formate.h
+//  NSDate+Operation.h
 //  SchoolPalmAgent
 //
 //  Created by zhax001 on 14-9-11.
@@ -8,20 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (Formate)
-- (NSString *)toUploadYMStart;
-- (NSString *)toUploadYMEnd;
-- (NSString *)toUploadYMD;
-- (NSString *)toUploadYMDHms;
-- (NSString *)toFilterY;
-- (NSString *)toFilterYM;
-- (NSString *)toFilterYMD;
-- (NSString *)toFullDate;
-- (NSString *)toSendTimeHM;
-
-- (NSDate *)setMonth:(NSInteger)month;
+@interface NSDate (Operation)
+- (NSDate *)offsetDay:(NSInteger)offset;
 - (NSDate *)offsetMonth:(NSInteger)offset;
-- (NSDate *)lastMonth;
-- (NSDate *)nextDay;
-- (NSDate *)lastDay;
+- (NSDate *)offsetYear:(NSInteger)offset;
+
+- (NSDate *)setDay:(NSInteger)day;
+- (NSDate *)setMonth:(NSInteger)month;
+- (NSDate *)setYear:(NSInteger)year;
 @end

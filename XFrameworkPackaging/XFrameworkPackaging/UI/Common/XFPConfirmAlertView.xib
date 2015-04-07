@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="kCv-rr-w5R" customClass="LHConfirmAlertView">
+        <view contentMode="scaleToFill" id="kCv-rr-w5R" customClass="XFPConfirmAlertView">
             <rect key="frame" x="0.0" y="0.0" width="270" height="122"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

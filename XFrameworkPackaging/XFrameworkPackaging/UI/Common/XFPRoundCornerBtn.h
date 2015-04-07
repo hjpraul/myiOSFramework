@@ -1,5 +1,5 @@
 //
-//  LHBSButton.h
+//  XFPRoundCornerBtn.h
 //  CHLightHandle
 //
 //  Created by hjpraul on 15/1/26.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #define LH_BS_BUTTON_RADIUS  3.0
-@interface LHBSButton : UIButton
+@interface XFPRoundCornerBtn : UIButton
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
 @end

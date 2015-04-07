@@ -1,21 +1,21 @@
 //
-//  LHConfirmAlertView.m
+//  XFPConfirmAlertView.m
 //  SchoolPalmUser
 //
 //  Created by zhax001 on 14-10-13.
 //  Copyright (c) 2014年 hjpraul. All rights reserved.
 //
 
-#import "LHConfirmAlertView.h"
+#import "XFPConfirmAlertView.h"
 
-@interface LHConfirmAlertView ()
+@interface XFPConfirmAlertView ()
 @property (copy, nonatomic) void (^sureAction)(void);
 @property (copy, nonatomic) void (^cancelAction)(void);
 @property (weak, nonatomic) IBOutlet UILabel *notice;
 @property (weak, nonatomic) IBOutlet UIImageView *bg;
 @end
 
-@implementation LHConfirmAlertView
+@implementation XFPConfirmAlertView
 
 - (id)initWithFrame:(CGRect)frame
 {

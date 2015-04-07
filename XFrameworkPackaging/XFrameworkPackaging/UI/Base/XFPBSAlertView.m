@@ -1,24 +1,24 @@
 //
-//  LHBSAlertView.m
+//  XFPBSAlertView.m
 //  LoveCook
 //
 //  Created by hjpraul on 13-8-18.
 //  Copyright (c) 2013年 lovecook. All rights reserved.
 //
 
-#import "LHBSAlertView.h"
+#import "XFPBSAlertView.h"
 #import <QuartzCore/QuartzCore.h>
 
 typedef void (^AnimationBlock)();
 typedef void (^AnimationCompletionBlock)(BOOL);
 
-@interface LHBSAlertView()
+@interface XFPBSAlertView()
 @property (nonatomic, retain) UIWindow *alertWindow;
 @property (nonatomic, retain) UIWindow *previousWindow;
 @property (nonatomic, retain) UIImageView *dimImageView;
 @end
 
-@implementation LHBSAlertView
+@implementation XFPBSAlertView
 
 - (id)init{
     self = [super init];

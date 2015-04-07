@@ -1,19 +1,19 @@
 //
-//  LHSlidingDrawerView.m
+//  XFPSlidingDrawerView.m
 //  CHLightHandle
 //
 //  Created by hjpraul on 15/3/3.
 //  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
-#import "LHSlidingDrawerView.h"
+#import "XFPSlidingDrawerView.h"
 
-@interface LHSlidingDrawerView ()
+@interface XFPSlidingDrawerView ()
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpaceConst;
 @end
 
-@implementation LHSlidingDrawerView
+@implementation XFPSlidingDrawerView
 
 - (void)addToVC:(UIViewController *)vc{
     self.containerVc = vc;

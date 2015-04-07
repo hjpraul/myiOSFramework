@@ -1,15 +1,15 @@
 //
-//  LHBSButton.m
+//  XFPRoundCornerBtn.m
 //  CHLightHandle
 //
 //  Created by hjpraul on 15/1/26.
 //  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
-#import "LHBSButton.h"
+#import "XFPRoundCornerBtn.h"
 #import "UIImage+Create.h"
 
-@implementation LHBSButton
+@implementation XFPRoundCornerBtn
 #pragma mark - Private Method
 - (void)setNormalBgColor:(UIColor *)color{
     UIImage *bgImg = [[UIImage imageWithColor:color size:self.frame.size] roundedRectImageWithSize:self.frame.size radius:LH_BS_BUTTON_RADIUS];

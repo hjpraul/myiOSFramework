@@ -10,7 +10,7 @@
 
 @implementation NSString (Modify)
 
-- (BOOL)isLegalPhoneNumber{
+- (BOOL)isLegalPhoneNum{
     /**
      * 手机号码
      * 移动：134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188
@@ -60,7 +60,7 @@
     }
 }
 
-- (BOOL)isLegalEmailAddress{
+- (BOOL)isLegalEmailAddr{
     if((0 != [self rangeOfString:@"@"].length) &&
        (0 != [self rangeOfString:@"."].length))
     {
@@ -106,10 +106,10 @@
     }
 }
 
--(BOOL)isLegalPassword{
+-(BOOL)isLegalPasswd{
     BOOL hasAlpha = NO;
     BOOL hasNum = NO;
-    int len = self.length;
+    int len = (int)self.length;
     if (len < 8 || len > 16) {
         return NO;
     }
@@ -128,16 +128,6 @@
     } else {
         return NO;
     }
-}
-///获得当前的日期
-+(NSString*)dateToNSString
-{
-    NSDate *date=[NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd hh-mm-ss"];
-    NSString *strDate = [dateFormatter stringFromDate:date];
-  
-    return strDate;
 }
 
 - (BOOL)isPureInt{

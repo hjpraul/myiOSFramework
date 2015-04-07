@@ -6,8 +6,9 @@
 //  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
-#import "NSString+Convert.h"
+#import "NSString+Code.h"
 #import "GTMBase64.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation NSString (Convert)
 - (NSString *)base64Encode{
@@ -15,10 +16,6 @@
     NSData* encodedData = [GTMBase64 encodeData:originData];
     NSString *encodeStr = [[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding];
     return encodeStr;
-    
-//    NSData* originData = [self dataUsingEncoding:NSUTF8StringEncoding];
-//    NSString* encodeStr = [originData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-//    return encodeStr;
 }
 
 - (NSString *)base64Decode{
@@ -28,27 +25,35 @@
     
     NSString *decodeStr = [[NSString alloc] initWithData:decodeData encoding:NSUTF8StringEncoding];
     return decodeStr;
+}
+
+// -Url encode
+-(NSString *)urlEncode {
+    NSString * encodedString = (NSString*) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8 ));
+    return encodedString;
     
-//    NSData* encodedData = [[NSData alloc] initWithBase64EncodedString:self options:0];
-//    NSString* decodeStr = [[NSString alloc]
-//                           initWithData:encodedData encoding:NSUTF8StringEncoding];
-//    return decodeStr;
 }
 
-- (long long)hexValue{
-    NSMutableString *tempStr = [NSMutableString stringWithString:self];
-    if([tempStr rangeOfString:@"#"].location !=NSNotFound)
-    {
-        // 转换成标准16进制数
-        [tempStr replaceCharactersInRange:[tempStr rangeOfString:@"#" ] withString:@"0x"];
+// -Url decode
+-(NSString *)urlDecode {
+    NSString *tempStr = [self stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+    NSString *decodeString = [tempStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return decodeString;//[decodeString stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+    
+}
+
+- (NSString *)md5Encode {
+    const char *ptr = [self UTF8String];
+    
+    unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
+    
+    CC_MD5(ptr, (CC_LONG)strlen(ptr), md5Buffer);
+    
+    // Convert MD5 value in the buffer to NSString of hex values
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        [output appendFormat:@"%02x",md5Buffer[i]];
     }
-    // 十六进制字符串转成整形。
-    long long valueLong = strtoul([tempStr cStringUsingEncoding:NSUTF8StringEncoding], 0, 16);
-    return valueLong;
+    return output;
 }
-
-+ (NSString *)hexStringWithLonglong:(long long)longlongValue{
-    return [NSString stringWithFormat:@"#F%06X",(int)longlongValue];
-}
-
 @end

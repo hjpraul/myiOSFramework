@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (Convert)
+@interface NSString (Code)
 - (NSString *)base64Encode;
 - (NSString *)base64Decode;
 
-- (long long)hexValue;
+-(NSString *)urlEncode;
+-(NSString *)urlDecode;
 
-+ (NSString *)hexStringWithLonglong:(long long)longlongValue;
+- (NSString *)md5Encode;
 @end

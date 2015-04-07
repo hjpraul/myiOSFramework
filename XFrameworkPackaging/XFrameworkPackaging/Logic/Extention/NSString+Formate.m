@@ -9,51 +9,6 @@
 #import "NSString+Formate.h"
 
 @implementation NSString (Formate)
-
-- (NSString *)getFormatedDateAndTime{
-    if (self.length < 14) {
-        return nil;
-    }
-    
-    NSMutableString *tempString = [NSMutableString string];
-    [tempString appendString:[self substringToIndex:4]];    // yyyy
-    for (int i = 0; i < 5; i++) {   // MMddhhssmm
-        if (i < 2) {
-            [tempString appendString:@"-"];
-        } else if (i == 2) {
-            [tempString appendString:@" "];
-        } else {
-            [tempString appendString:@":"];
-        }
-        NSRange range = {4+i*2,2};
-        [tempString appendString:[self substringWithRange:range]];
-    }
-    return [NSString stringWithString:tempString];
-}
-
-- (NSString *)getFormatedAmount{
-    return [NSString stringWithFormat:@"%.2f",self.floatValue/100];
-}
-
-- (NSString *)getUnFormatedAmount{
-//    NSRange range=[self rangeOfString:@"."];
-//    if (range.location==[self length]-3) {
-//       
-//    }
-//    else if(range.location==[self length]-2)
-//    {
-//        return [NSString stringWithFormat:@"%d",(NSInteger)(self.floatValue*10)];
-//    }
-//    else if (range.location==[self length]-1)
-//    {
-//        return [self substringToIndex:self.length-1];
-//    }
-//    return self;
-     return [NSString stringWithFormat:@"%d",(NSInteger)(self.floatValue*100)];
-}
-
-
-
 + (NSAttributedString *)getFormatedAmountWithColor:(UIColor *)textColor
                                             amount:(NSString *)amount
                                               unit:(NSString *)unit{
@@ -100,9 +55,8 @@
 }
 
 
-+(NSString *)ReplaceSpecialCharacter:(NSString *)replaceString
-{
-    NSString *telString=replaceString;
+-(NSString *)toPurePhoneNum {
+    NSString *telString = self;
     NSRange range;
     while ((range=[telString rangeOfString:@"mobile:" options:NSRegularExpressionSearch]).location!=NSNotFound) {
         telString=[telString stringByReplacingCharactersInRange:range withString:@""];
@@ -120,7 +74,7 @@
 }
 
 // 普通字符串转换为银行卡安全形式 eg:6226222222222222222转换为6226 **** **** **** 2222
-- (NSString *)normalToSecBankCardNum{
+- (NSString *)toSecBankCardNum{
     if (self.length < 12) {
         return nil;
     }else{
@@ -128,16 +82,11 @@
     }
 }
 
-// 银行卡完整形式转换为普通字符串，eg:6226 2222 2222 2222 222转换为6226222222222222222
-- (NSString *)bankCardNumTONormal{
-    return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
-}
-
 // 普通字符串转换为银行卡完整形式，eg:6226222222222222222转换为6226 2222 2222 2222 222
--(NSString *)normalToBankNum{
-    NSString *tmpStr = [self bankCardNumTONormal];
+-(NSString *)toBankNum{
+    NSString *tmpStr = [self bankCardNumToNormal];
     
-    int size = (tmpStr.length / 4);
+    int size = (int)(tmpStr.length/4);
     
     NSMutableArray *tmpStrArr = [NSMutableArray array];
     for (int n = 0;n < size; n++)
@@ -156,14 +105,20 @@
         return tmpStr;
     }
 }
-//今天是2014-6-10，有没有接口计算添加两个月的日期是多少
-+(NSDate *)dateWithIntervalMonthFromDate_Ext:(NSDate *)date intervalMonth:(NSInteger)month
-{
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setMonth:month];
-    NSCalendar *calender = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate *mDate = [calender dateByAddingComponents:comps toDate:date options:0];
-    return mDate;
+
+// 银行卡完整形式转换为普通字符串，eg:6226 2222 2222 2222 222转换为6226222222222222222
+- (NSString *)bankCardNumToNormal{
+    return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
+- (NSString *)toFullDateShow {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSDate *date = [dateFormatter dateFromString:self];
+    
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *retStr = [dateFormatter stringFromDate:date];
+    return retStr;
 }
 
 @end

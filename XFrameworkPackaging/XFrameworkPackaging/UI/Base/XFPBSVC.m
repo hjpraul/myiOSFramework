@@ -1,24 +1,40 @@
 //
-//  LHBSVC.m
-//  CHLightHandle
+//  XFPBSVC.m
+//  XFrameworkPackaging
 //
 //  Created by hjpraul on 15/1/17.
 //  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
-#import "LHBSVC.h"
+#import "XFPBSVC.h"
 
-@interface LHBSVC ()
+@interface XFPBSVC ()
 
 @end
 
-@implementation LHBSVC
+@implementation XFPBSVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // 设置返回键
     [self setBackButtonVisible:YES];
+    
+#ifdef __IPHONE_7_0
+    if (isIOS7Above) {
+        //这个属性属于UIExtendedEdge类型，它可以单独指定矩形的四条边，也可以单独指定、指定全部、全部不指定。
+        //指定视图的哪条边需要扩展，不用理会操作栏的透明度。这个属性的默认值是UIRectEdgeAll。
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        //如果你使用了不透明的操作栏，设置edgesForExtendedLayout的时候也请将 extendedLayoutIncludesOpaqueBars的值设置为No（默认值是YES）
+        self.extendedLayoutIncludesOpaqueBars = NO;
+        //如果你不想让scroll view的内容自动调整，将这个属性设为NO（默认值YES）。
+        self.automaticallyAdjustsScrollViewInsets = NO;
+        //如果navigationbar为不透明的，那么需要这个设置
+        self.navigationController.navigationBar.translucent = NO;
+        //如果有tabBarController，此设置会在设置了hidesBottomBarWhenPushed的时候让push变得更顺滑。
+        self.tabBarController.tabBar.translucent = NO;
+    }
+#endif
     
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
@@ -71,13 +87,6 @@
     CGFloat x = 0;
     if (isIOS7Above) {
         x = -10;
-        //这个属性属于UIExtendedEdge类型，它可以单独指定矩形的四条边，也可以单独指定、指定全部、全部不指定。
-        //指定视图的哪条边需要扩展，不用理会操作栏的透明度。这个属性的默认值是UIRectEdgeAll。
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        //如果你使用了不透明的操作栏，设置edgesForExtendedLayout的时候也请将 extendedLayoutIncludesOpaqueBars的值设置为No（默认值是YES）
-        self.extendedLayoutIncludesOpaqueBars = NO;
-        //如果你不想让scroll view的内容自动调整，将这个属性设为NO（默认值YES）。
-        self.automaticallyAdjustsScrollViewInsets = NO;
     }
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(x, 0, 80, 44)];
     [backView addSubview:backButton];

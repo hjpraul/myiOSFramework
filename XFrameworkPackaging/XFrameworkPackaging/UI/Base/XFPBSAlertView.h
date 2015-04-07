@@ -1,5 +1,5 @@
 //
-//  LHBSAlertView.h
+//  XFPBSAlertView.h
 //  LoveCook
 //
 //  Created by hjpraul on 13-8-18.
@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger, AlertViewExitDirection){
 
 #import <UIKit/UIKit.h>
 
-@interface LHBSAlertView : UIView
+@interface XFPBSAlertView : UIView
 @property(nonatomic, assign) BOOL enableClickBGToDismiss;
 @property(nonatomic, assign) AlertViewPresentationStyle presentationStyle;
 @property(nonatomic, assign) AlertViewDismissalStyle dismissalStyle;
