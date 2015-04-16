@@ -45,6 +45,9 @@
 		78C9EEE91ADF5560002C3FD0 /* welcome04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEE21ADF5560002C3FD0 /* welcome04@2x.png */; };
 		78C9EEEA1ADF5560002C3FD0 /* welcome05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEE31ADF5560002C3FD0 /* welcome05@2x.png */; };
 		78C9EEED1ADF56CC002C3FD0 /* XFPLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EEEC1ADF56CC002C3FD0 /* XFPLaunchVC.m */; };
+		78C9EEF21ADF91A3002C3FD0 /* XFPAPPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EEF11ADF91A3002C3FD0 /* XFPAPPCache.m */; };
+		78C9EEF51ADF9287002C3FD0 /* XFPAppConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EEF41ADF9287002C3FD0 /* XFPAppConfigure.m */; };
+		78C9EEF81ADF9391002C3FD0 /* XFPAppConfigure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEF71ADF9391002C3FD0 /* XFPAppConfigure.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +137,11 @@
 		78C9EEE31ADF5560002C3FD0 /* welcome05@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome05@2x.png"; sourceTree = "<group>"; };
 		78C9EEEB1ADF56CC002C3FD0 /* XFPLaunchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPLaunchVC.h; sourceTree = "<group>"; };
 		78C9EEEC1ADF56CC002C3FD0 /* XFPLaunchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPLaunchVC.m; sourceTree = "<group>"; };
+		78C9EEF01ADF91A3002C3FD0 /* XFPAPPCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPAPPCache.h; sourceTree = "<group>"; };
+		78C9EEF11ADF91A3002C3FD0 /* XFPAPPCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPAPPCache.m; sourceTree = "<group>"; };
+		78C9EEF31ADF9287002C3FD0 /* XFPAppConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPAppConfigure.h; sourceTree = "<group>"; };
+		78C9EEF41ADF9287002C3FD0 /* XFPAppConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPAppConfigure.m; sourceTree = "<group>"; };
+		78C9EEF71ADF9391002C3FD0 /* XFPAppConfigure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = XFPAppConfigure.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +283,8 @@
 		78C2F59B1ACD2AD7001E928F /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				78C9EEEE1ADF9173002C3FD0 /* Cache */,
+				78C9EEEF1ADF9173002C3FD0 /* Configure */,
 				78C2F59C1ACD2AD7001E928F /* Extention */,
 			);
 			path = Logic;
@@ -304,6 +314,7 @@
 		78C2F59D1ACD2AD7001E928F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				78C9EEF61ADF9352002C3FD0 /* Configure */,
 				78C9EEDA1ADF5560002C3FD0 /* Img */,
 			);
 			path = Resource;
@@ -420,6 +431,32 @@
 			path = LaunchAndHome;
 			sourceTree = "<group>";
 		};
+		78C9EEEE1ADF9173002C3FD0 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				78C9EEF01ADF91A3002C3FD0 /* XFPAPPCache.h */,
+				78C9EEF11ADF91A3002C3FD0 /* XFPAPPCache.m */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		78C9EEEF1ADF9173002C3FD0 /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				78C9EEF31ADF9287002C3FD0 /* XFPAppConfigure.h */,
+				78C9EEF41ADF9287002C3FD0 /* XFPAppConfigure.m */,
+			);
+			path = Configure;
+			sourceTree = "<group>";
+		};
+		78C9EEF61ADF9352002C3FD0 /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				78C9EEF71ADF9391002C3FD0 /* XFPAppConfigure.plist */,
+			);
+			path = Configure;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -501,6 +538,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C9EEF81ADF9391002C3FD0 /* XFPAppConfigure.plist in Resources */,
 				78C9EEE41ADF5560002C3FD0 /* bg_splash@2x.png in Resources */,
 				78C2F5B61ACD2F2B001E928F /* XFPConfirmAlertView.xib in Resources */,
 				78C9EEE71ADF5560002C3FD0 /* welcome02@2x.png in Resources */,
@@ -543,6 +581,7 @@
 				78C2F54D1ACCE222001E928F /* main.m in Sources */,
 				78C2F59A1ACD1C60001E928F /* DDMultiFormatter.m in Sources */,
 				78C2F5B51ACD2F2B001E928F /* XFPConfirmAlertView.m in Sources */,
+				78C9EEF21ADF91A3002C3FD0 /* XFPAPPCache.m in Sources */,
 				78C2F5901ACD1C60001E928F /* CLIColor.m in Sources */,
 				78C2F5D01ACD37AE001E928F /* UIImage+Process.m in Sources */,
 				78C2F5CD1ACD37AE001E928F /* NSString+Modify.m in Sources */,
@@ -551,6 +590,7 @@
 				78C2F5CC1ACD37AE001E928F /* NSString+Formate.m in Sources */,
 				78C2F5A61ACD2CC8001E928F /* XFPBSVC.m in Sources */,
 				78C2F5941ACD1C60001E928F /* DDASLLogger.m in Sources */,
+				78C9EEF51ADF9287002C3FD0 /* XFPAppConfigure.m in Sources */,
 				78C2F5921ACD1C60001E928F /* DDAbstractDatabaseLogger.m in Sources */,
 				78C2F5AC1ACD2EA5001E928F /* XFPSlidingDrawerView.m in Sources */,
 				78C2F5991ACD1C60001E928F /* DDDispatchQueueLogFormatter.m in Sources */,

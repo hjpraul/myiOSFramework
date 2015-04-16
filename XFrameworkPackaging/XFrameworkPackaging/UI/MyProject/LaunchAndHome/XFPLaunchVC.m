@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *logoTopAlignConst;
 @end
 
+#define SPLASH_STAY_TIMEVAL (2)
+
 @implementation XFPLaunchVC
 - (void)viewDidLoad
 {
@@ -30,7 +32,7 @@
         [self performSelector:@selector(switchEntryCompleted:) withObject:^{
             _splashBg.hidden = NO;
             _welcomScrollView.hidden = YES;
-        }afterDelay:2];
+        } afterDelay:SPLASH_STAY_TIMEVAL];
     }
 }
 
