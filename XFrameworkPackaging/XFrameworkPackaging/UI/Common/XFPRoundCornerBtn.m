@@ -12,7 +12,7 @@
 @implementation XFPRoundCornerBtn
 #pragma mark - Private Method
 - (void)setNormalBgColor:(UIColor *)color{
-    UIImage *bgImg = [[UIImage imageWithColor:color size:self.frame.size] roundedRectImageWithSize:self.frame.size radius:LH_BS_BUTTON_RADIUS];
+    UIImage *bgImg = [[UIImage imageWithColor:color size:self.frame.size] toRoundedRectImageWithSize:self.frame.size radius:LH_BS_BUTTON_RADIUS];
     [self setBackgroundImage:bgImg forState:UIControlStateNormal];
 //    CGFloat red;
 //    CGFloat green;
@@ -39,7 +39,7 @@
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state{
-    UIImage *bgImg = [[UIImage imageWithColor:backgroundColor size:self.frame.size] roundedRectImageWithSize:self.frame.size radius:3.0];
+    UIImage *bgImg = [[UIImage imageWithColor:backgroundColor size:self.frame.size] toRoundedRectImageWithSize:self.frame.size radius:3.0];
     [self setBackgroundImage:bgImg forState:state];
 }
 

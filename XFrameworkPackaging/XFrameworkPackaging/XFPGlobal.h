@@ -148,9 +148,17 @@ __singleton__ = nil; \
 // 常量预定义
 #define DEFAULT_ANIMATION_DURATION  (0.5)
 
+// 客户端是否首次使用
+#define XFP_SET_LAST_VERSION do{[[NSUserDefaults standardUserDefaults] setObject:APPVERSION forKey:@"XFPLastVersion"];[[NSUserDefaults standardUserDefaults]synchronize];}while(0)
+#define XFP_LAST_VERSION  ([[NSUserDefaults standardUserDefaults] objectForKey:@"XFPLastVersion"])
+
 /******************全局可见头文件*****************/
 #import "DDLog.h"
+#import "XFPBSVC.h"
 
+/******************工具类*****************/
+#import "UIImage+Create.h"
+#import "UIImage+Process.h"
 
 // DDLog 预定义
 #define DEBUG 1

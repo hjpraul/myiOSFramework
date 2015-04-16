@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XFPLaunchVC.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    XFPLaunchVC *vc = [[UIStoryboard storyboardWithName:@"Launch" bundle:nil] instantiateInitialViewController];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

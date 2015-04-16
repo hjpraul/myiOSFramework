@@ -36,6 +36,15 @@
 		78C2F5D01ACD37AE001E928F /* UIImage+Process.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C2F5C91ACD37AE001E928F /* UIImage+Process.m */; };
 		78C2F5D11ACD37AE001E928F /* UIImage+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C2F5CB1ACD37AE001E928F /* UIImage+Create.m */; };
 		78C2F5D41ACD480F001E928F /* NSDate+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C2F5D31ACD480F001E928F /* NSDate+Operation.m */; };
+		78C9EED91ADF4C0D002C3FD0 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EED81ADF4C0D002C3FD0 /* Launch.storyboard */; };
+		78C9EEE41ADF5560002C3FD0 /* bg_splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEDD1ADF5560002C3FD0 /* bg_splash@2x.png */; };
+		78C9EEE51ADF5560002C3FD0 /* icon_app_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEDE1ADF5560002C3FD0 /* icon_app_logo@2x.png */; };
+		78C9EEE61ADF5560002C3FD0 /* welcome01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEDF1ADF5560002C3FD0 /* welcome01@2x.png */; };
+		78C9EEE71ADF5560002C3FD0 /* welcome02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEE01ADF5560002C3FD0 /* welcome02@2x.png */; };
+		78C9EEE81ADF5560002C3FD0 /* welcome03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEE11ADF5560002C3FD0 /* welcome03@2x.png */; };
+		78C9EEE91ADF5560002C3FD0 /* welcome04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEE21ADF5560002C3FD0 /* welcome04@2x.png */; };
+		78C9EEEA1ADF5560002C3FD0 /* welcome05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EEE31ADF5560002C3FD0 /* welcome05@2x.png */; };
+		78C9EEED1ADF56CC002C3FD0 /* XFPLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EEEC1ADF56CC002C3FD0 /* XFPLaunchVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +124,16 @@
 		78C2F5CB1ACD37AE001E928F /* UIImage+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Create.m"; sourceTree = "<group>"; };
 		78C2F5D21ACD480F001E928F /* NSDate+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Operation.h"; sourceTree = "<group>"; };
 		78C2F5D31ACD480F001E928F /* NSDate+Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Operation.m"; sourceTree = "<group>"; };
+		78C9EED81ADF4C0D002C3FD0 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		78C9EEDD1ADF5560002C3FD0 /* bg_splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_splash@2x.png"; sourceTree = "<group>"; };
+		78C9EEDE1ADF5560002C3FD0 /* icon_app_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_app_logo@2x.png"; sourceTree = "<group>"; };
+		78C9EEDF1ADF5560002C3FD0 /* welcome01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome01@2x.png"; sourceTree = "<group>"; };
+		78C9EEE01ADF5560002C3FD0 /* welcome02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome02@2x.png"; sourceTree = "<group>"; };
+		78C9EEE11ADF5560002C3FD0 /* welcome03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome03@2x.png"; sourceTree = "<group>"; };
+		78C9EEE21ADF5560002C3FD0 /* welcome04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome04@2x.png"; sourceTree = "<group>"; };
+		78C9EEE31ADF5560002C3FD0 /* welcome05@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome05@2x.png"; sourceTree = "<group>"; };
+		78C9EEEB1ADF56CC002C3FD0 /* XFPLaunchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPLaunchVC.h; sourceTree = "<group>"; };
+		78C9EEEC1ADF56CC002C3FD0 /* XFPLaunchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPLaunchVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +304,7 @@
 		78C2F59D1ACD2AD7001E928F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				78C9EEDA1ADF5560002C3FD0 /* Img */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -337,6 +357,7 @@
 		78C2F5A21ACD2C3A001E928F /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
+				78C9EED71ADF4BBA002C3FD0 /* LaunchAndHome */,
 				78C2F5A31ACD2C3A001E928F /* StoryBoard */,
 			);
 			path = MyProject;
@@ -357,6 +378,46 @@
 				78C2F5BE1ACD379D001E928F /* GTMDefines.h */,
 			);
 			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		78C9EED71ADF4BBA002C3FD0 /* LaunchAndHome */ = {
+			isa = PBXGroup;
+			children = (
+				78C9EED81ADF4C0D002C3FD0 /* Launch.storyboard */,
+				78C9EEEB1ADF56CC002C3FD0 /* XFPLaunchVC.h */,
+				78C9EEEC1ADF56CC002C3FD0 /* XFPLaunchVC.m */,
+			);
+			path = LaunchAndHome;
+			sourceTree = "<group>";
+		};
+		78C9EEDA1ADF5560002C3FD0 /* Img */ = {
+			isa = PBXGroup;
+			children = (
+				78C9EEDB1ADF5560002C3FD0 /* Common */,
+				78C9EEDC1ADF5560002C3FD0 /* LaunchAndHome */,
+			);
+			path = Img;
+			sourceTree = "<group>";
+		};
+		78C9EEDB1ADF5560002C3FD0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		78C9EEDC1ADF5560002C3FD0 /* LaunchAndHome */ = {
+			isa = PBXGroup;
+			children = (
+				78C9EEDD1ADF5560002C3FD0 /* bg_splash@2x.png */,
+				78C9EEDE1ADF5560002C3FD0 /* icon_app_logo@2x.png */,
+				78C9EEDF1ADF5560002C3FD0 /* welcome01@2x.png */,
+				78C9EEE01ADF5560002C3FD0 /* welcome02@2x.png */,
+				78C9EEE11ADF5560002C3FD0 /* welcome03@2x.png */,
+				78C9EEE21ADF5560002C3FD0 /* welcome04@2x.png */,
+				78C9EEE31ADF5560002C3FD0 /* welcome05@2x.png */,
+			);
+			path = LaunchAndHome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,8 +501,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C9EEE41ADF5560002C3FD0 /* bg_splash@2x.png in Resources */,
 				78C2F5B61ACD2F2B001E928F /* XFPConfirmAlertView.xib in Resources */,
+				78C9EEE71ADF5560002C3FD0 /* welcome02@2x.png in Resources */,
+				78C9EEE91ADF5560002C3FD0 /* welcome04@2x.png in Resources */,
+				78C9EEE51ADF5560002C3FD0 /* icon_app_logo@2x.png in Resources */,
+				78C9EEE81ADF5560002C3FD0 /* welcome03@2x.png in Resources */,
 				78C2F5581ACCE222001E928F /* Images.xcassets in Resources */,
+				78C9EEE61ADF5560002C3FD0 /* welcome01@2x.png in Resources */,
+				78C9EEEA1ADF5560002C3FD0 /* welcome05@2x.png in Resources */,
+				78C9EED91ADF4C0D002C3FD0 /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C2F5931ACD1C60001E928F /* DDASLLogCapture.m in Sources */,
+				78C9EEED1ADF56CC002C3FD0 /* XFPLaunchVC.m in Sources */,
 				78C2F5971ACD1C60001E928F /* DDTTYLogger.m in Sources */,
 				78C2F5951ACD1C60001E928F /* DDFileLogger.m in Sources */,
 				78C2F5D11ACD37AE001E928F /* UIImage+Create.m in Sources */,
@@ -587,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XFrameworkPackaging/XFrameworkPackaging-Prefix.pch";
 				INFOPLIST_FILE = XFrameworkPackaging/Info.plist;
@@ -600,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XFrameworkPackaging/XFrameworkPackaging-Prefix.pch";
 				INFOPLIST_FILE = XFrameworkPackaging/Info.plist;
