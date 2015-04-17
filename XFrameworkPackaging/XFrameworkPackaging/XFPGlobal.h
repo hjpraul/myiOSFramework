@@ -9,6 +9,8 @@
 #ifndef XFrameworkPackaging_XFPGlobal_h
 #define XFrameworkPackaging_XFPGlobal_h
 
+#import "AppDelegate.h"
+
 /******************常用预定义*****************/
 // 获取mainmundle中的文件
 #define PATH_OF_MAIN_BUNDLE(fileName) [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:fileName]
@@ -153,8 +155,11 @@ __singleton__ = nil; \
 #define XFP_LAST_VERSION  ([[NSUserDefaults standardUserDefaults] objectForKey:@"XFPLastVersion"])
 
 /******************全局可见头文件*****************/
+#import "XFPConfig.h"
 #import "DDLog.h"
 #import "XFPBSVC.h"
+#import "XFPBSNaVC.h"
+#import "XFPPageCache.h"
 
 /******************工具类*****************/
 #import "UIImage+Create.h"

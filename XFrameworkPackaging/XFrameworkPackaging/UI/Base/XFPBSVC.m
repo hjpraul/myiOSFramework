@@ -38,7 +38,7 @@
     
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
-    UIImage *navBGImg = [[UIImage imageNamed:@"bg_nav_title"] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
+    UIImage *navBGImg = [[UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(600, 320)] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
     [self.navigationController.navigationBar setBackgroundImage:navBGImg forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:20],NSFontAttributeName,[UIColor blackColor],NSForegroundColorAttributeName,nil]];
     
@@ -80,7 +80,7 @@
     backButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     backButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [backButton setAdjustsImageWhenHighlighted:YES];
-    [backButton setTitle:@"" forState:UIControlStateNormal];
+    [backButton setTitle:@"返回" forState:UIControlStateNormal];
     [backButton setImage:backBarImg forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(bsBackBarClicked) forControlEvents:UIControlEventTouchUpInside];
     
