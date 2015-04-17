@@ -467,6 +467,7 @@
 				78C2F5431ACCE222001E928F /* Sources */,
 				78C2F5441ACCE222001E928F /* Frameworks */,
 				78C2F5451ACCE222001E928F /* Resources */,
+				78C9EEFA1ADFAD5E002C3FD0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -560,6 +561,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78C9EEFA1ADFAD5E002C3FD0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#build number control\nif [ $CONFIGURATION == Release ]; then\n    echo \"Bumping build number...\"\n    infoPlist=${PROJECT_DIR}/${INFOPLIST_FILE}\n    #increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${infoPlist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $infoPlist\"\n    else\n        buildnum=$(expr $buildnum + 1)\n        /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${infoPlist}\"\n        echo \"Bumped build number to $buildnum\"\n    fi\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n\n#configure platform\nappConfigurePlist=${PROJECT_DIR}/\"XFrameworkPackaging/Resource/Configure/XFPAppConfigure.plist\"\necho $appConfigurePlist\nplatformType=$(/usr/libexec/PlistBuddy -c \"Print platform\" \"${appConfigurePlist}\")\n#FIXME:do your configure\necho $platformType";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		78C2F5431ACCE222001E928F /* Sources */ = {

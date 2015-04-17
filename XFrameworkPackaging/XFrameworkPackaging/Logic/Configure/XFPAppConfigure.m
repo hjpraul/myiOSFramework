@@ -12,9 +12,18 @@
 
 @interface XFPAppConfigure ()
 @property (strong, nonatomic) NSDictionary *fileContent;
+@property (assign, nonatomic) NSInteger platform;   // 0:测试，1：正式
 @end
 
 @implementation XFPAppConfigure
+
+- (NSInteger)platform{
+    if (_platform < 0) {
+        _platform = [[self.fileContent objectForKey:@"platform"] integerValue];
+    }
+    
+    return _platform;
+}
 
 - (NSDictionary *)fileContent{
     if (!_fileContent) {
@@ -25,7 +34,7 @@
 }
 
 - (NSString *)serverUrl{
-    _serverUrl = [self.fileContent objectForKey:@"serverUrl"];
+    _serverUrl = SAFE_GET_ARRAY_OBJECT(((NSArray *)[self.fileContent objectForKey:@"serverUrl"]), self.platform);
     return _serverUrl;
 }
 
