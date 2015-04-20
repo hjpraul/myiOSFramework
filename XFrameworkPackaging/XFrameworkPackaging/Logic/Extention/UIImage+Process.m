@@ -51,7 +51,18 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
 }
 
 // 修改图片大小
-- (UIImage *)imageScaledToSize:(CGSize)newSize{
+- (UIImage *)imageScaledToSize:(CGSize)newSize aspectRatio:(BOOL)aspectRatio{
+    CGSize realSize = CGSizeZero;
+    if (aspectRatio) {
+        CGFloat wRatio = newSize.width/self.size.width;
+        CGFloat hRatio = newSize.height/self.size.height;
+        CGFloat realRatio = (wRatio<hRatio? wRatio : hRatio);
+        realSize.width = realRatio*self.size.width;
+        realSize.height = realRatio*self.size.height;
+    } else {
+        realSize = newSize;
+    }
+    
     UIGraphicsBeginImageContext(newSize);
     [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *newImage=UIGraphicsGetImageFromCurrentImageContext();

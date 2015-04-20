@@ -14,7 +14,7 @@
                          image2:(UIImage *)image2 rect2:(CGRect)rect2;
 
 // 图片缩放
-- (UIImage *)imageScaledToSize:(CGSize)newSize;
+- (UIImage *)imageScaledToSize:(CGSize)newSize aspectRatio:(BOOL)aspectRatio;
 
 // 重设图片颜色
 - (UIImage *)imageWithTintColor:(UIColor *)tintColor;
