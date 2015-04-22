@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zIU-g9-A9g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zIU-g9-A9g">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
@@ -60,27 +60,42 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="bg_splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="gwz-fy-tS3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="617"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ0-nM-NT5" customClass="XFPRoundCornerBtn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ0-nM-NT5" customClass="XFPRoundCornerBtn">
                                 <rect key="frame" x="112" y="266" width="96" height="67"/>
                                 <color key="backgroundColor" red="0.57254901960000004" green="0.41960784309999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="xqO-Zf-Qe5"/>
+                                </constraints>
                                 <state key="normal" title="下一页">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pmL-QT-K1f" kind="push" id="0v0-h6-to4"/>
+                                    <action selector="nextBtnClicked:" destination="y0R-Bi-8Y1" eventType="touchUpInside" id="02D-hV-3X3"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpG-Bu-VI4">
+                                <rect key="frame" x="53" y="77" width="215" height="170"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gwz-fy-tS3" firstAttribute="leading" secondItem="cEr-yU-Tt4" secondAttribute="leading" id="2WX-ID-xp0"/>
                             <constraint firstAttribute="trailing" secondItem="gwz-fy-tS3" secondAttribute="trailing" id="75e-bn-Kkj"/>
+                            <constraint firstAttribute="trailing" secondItem="NZ0-nM-NT5" secondAttribute="trailing" constant="112" id="C7O-8R-9Ul"/>
+                            <constraint firstItem="jpG-Bu-VI4" firstAttribute="top" secondItem="SaJ-Kj-4YO" secondAttribute="bottom" constant="13" id="EKW-BP-qfd"/>
                             <constraint firstItem="gwz-fy-tS3" firstAttribute="top" secondItem="cEr-yU-Tt4" secondAttribute="top" id="NPf-Sg-Yx8"/>
+                            <constraint firstItem="NZ0-nM-NT5" firstAttribute="leading" secondItem="cEr-yU-Tt4" secondAttribute="leading" constant="112" id="aAN-TM-9Cy"/>
+                            <constraint firstItem="NZ0-nM-NT5" firstAttribute="top" secondItem="jpG-Bu-VI4" secondAttribute="bottom" constant="19" id="agH-Sq-F7F"/>
+                            <constraint firstItem="NZ0-nM-NT5" firstAttribute="top" secondItem="SaJ-Kj-4YO" secondAttribute="bottom" constant="202" id="kZO-Ox-C4r"/>
+                            <constraint firstAttribute="trailing" secondItem="jpG-Bu-VI4" secondAttribute="trailing" constant="52" id="mXG-R3-PVL"/>
+                            <constraint firstItem="jpG-Bu-VI4" firstAttribute="leading" secondItem="cEr-yU-Tt4" secondAttribute="leading" constant="53" id="qmS-tj-KiN"/>
                             <constraint firstAttribute="bottom" secondItem="gwz-fy-tS3" secondAttribute="bottom" constant="-49" id="vU3-yI-6Ep"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="1stGrade" id="JK7-FO-WcY"/>
                     <connections>
+                        <outlet property="testView" destination="jpG-Bu-VI4" id="Y7L-jx-wVc"/>
                         <segue destination="pmL-QT-K1f" kind="push" id="cda-wv-qsn"/>
                     </connections>
                 </viewController>
@@ -167,7 +182,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="cda-wv-qsn"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -1,5 +1,5 @@
 //
-//  LoadingView.h
+//  XFPHerLoadingView.h
 //  SchoolPalmUser
 //
 //  Created by hjpraul on 14-8-5.
@@ -7,7 +7,7 @@
 //
 
 
-@interface LoadingView : UIView
+@interface XFPHerLoadingView : UIView
 
 + (void)showLoadingMessage:(NSString *)message inView:(UIView *)view;
 + (void)showSuccessMessage:(NSString *)message inView:(UIView *)view;
