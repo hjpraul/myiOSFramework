@@ -39,7 +39,8 @@
 }
 
 - (IBAction)nextBtnClicked:(UIButton *)sender {
-    [_testView showLoadingWithMessage:@"loading..."];
-    [_testView performSelector:@selector(showSuccessWithMessage:) withObject:@"加载失败" afterDelay:5];
+//    [_testView showLoadingWithMessage:@"loading..."];
+//    [_testView performSelector:@selector(showSuccessWithMessage:) withObject:@"加载失败" afterDelay:5];
+//    [@"SASDFADFASDFL;ASLDFJASSASDFADFASDFL;ASLDFJASSASDFADFASDFL;ASLDFJASSASDFADFASDFL;ASLDF" toast];
 }
 @end

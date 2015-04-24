@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781AE2BE1AE9E6E900B95DBB /* XFPToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 781AE2BD1AE9E6E900B95DBB /* XFPToast.m */; };
 		782E1D601AE4A22500A6786E /* XFPSinglePicPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1D5F1AE4A22500A6786E /* XFPSinglePicPicker.m */; };
 		782E1DAD1AE4F49900A6786E /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1D6A1AE4F49900A6786E /* BarItem.m */; };
 		782E1DAE1AE4F49900A6786E /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1D6C1AE4F49900A6786E /* CBStoreHouseRefreshControl.m */; };
@@ -59,10 +60,6 @@
 		782E1E6F1AE74D4F00A6786E /* XFPHerLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E641AE74D4F00A6786E /* XFPHerLoadingView.m */; };
 		782E1E721AE77E6300A6786E /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E711AE77E6300A6786E /* UIView+Loading.m */; };
 		782E1E7E1AE793E600A6786E /* NSString+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E751AE793E600A6786E /* NSString+Toast.m */; };
-		782E1E7F1AE793E600A6786E /* TKAlertCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E771AE793E600A6786E /* TKAlertCenter.m */; };
-		782E1E801AE793E600A6786E /* TKProgressAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E791AE793E600A6786E /* TKProgressAlertView.m */; };
-		782E1E811AE793E600A6786E /* TKProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E7B1AE793E600A6786E /* TKProgressBarView.m */; };
-		782E1E821AE793E600A6786E /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E7D1AE793E600A6786E /* UIView+TKCategory.m */; };
 		78C2F54D1ACCE222001E928F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C2F54C1ACCE222001E928F /* main.m */; };
 		78C2F5501ACCE222001E928F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C2F54F1ACCE222001E928F /* AppDelegate.m */; };
 		78C2F5581ACCE222001E928F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C2F5571ACCE222001E928F /* Images.xcassets */; };
@@ -136,6 +133,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		781AE2BC1AE9E6E900B95DBB /* XFPToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPToast.h; sourceTree = "<group>"; };
+		781AE2BD1AE9E6E900B95DBB /* XFPToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPToast.m; sourceTree = "<group>"; };
 		782E1D5E1AE4A22500A6786E /* XFPSinglePicPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPSinglePicPicker.h; sourceTree = "<group>"; };
 		782E1D5F1AE4A22500A6786E /* XFPSinglePicPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPSinglePicPicker.m; sourceTree = "<group>"; };
 		782E1D691AE4F49900A6786E /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
@@ -236,14 +235,6 @@
 		782E1E711AE77E6300A6786E /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
 		782E1E741AE793E600A6786E /* NSString+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Toast.h"; sourceTree = "<group>"; };
 		782E1E751AE793E600A6786E /* NSString+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Toast.m"; sourceTree = "<group>"; };
-		782E1E761AE793E600A6786E /* TKAlertCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAlertCenter.h; sourceTree = "<group>"; };
-		782E1E771AE793E600A6786E /* TKAlertCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAlertCenter.m; sourceTree = "<group>"; };
-		782E1E781AE793E600A6786E /* TKProgressAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKProgressAlertView.h; sourceTree = "<group>"; };
-		782E1E791AE793E600A6786E /* TKProgressAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKProgressAlertView.m; sourceTree = "<group>"; };
-		782E1E7A1AE793E600A6786E /* TKProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKProgressBarView.h; sourceTree = "<group>"; };
-		782E1E7B1AE793E600A6786E /* TKProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKProgressBarView.m; sourceTree = "<group>"; };
-		782E1E7C1AE793E600A6786E /* UIView+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
-		782E1E7D1AE793E600A6786E /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
 		78C2F5471ACCE222001E928F /* XFrameworkPackaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XFrameworkPackaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C2F54B1ACCE222001E928F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78C2F54C1ACCE222001E928F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -540,14 +531,8 @@
 			children = (
 				782E1E741AE793E600A6786E /* NSString+Toast.h */,
 				782E1E751AE793E600A6786E /* NSString+Toast.m */,
-				782E1E761AE793E600A6786E /* TKAlertCenter.h */,
-				782E1E771AE793E600A6786E /* TKAlertCenter.m */,
-				782E1E781AE793E600A6786E /* TKProgressAlertView.h */,
-				782E1E791AE793E600A6786E /* TKProgressAlertView.m */,
-				782E1E7A1AE793E600A6786E /* TKProgressBarView.h */,
-				782E1E7B1AE793E600A6786E /* TKProgressBarView.m */,
-				782E1E7C1AE793E600A6786E /* UIView+TKCategory.h */,
-				782E1E7D1AE793E600A6786E /* UIView+TKCategory.m */,
+				781AE2BC1AE9E6E900B95DBB /* XFPToast.h */,
+				781AE2BD1AE9E6E900B95DBB /* XFPToast.m */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -1060,12 +1045,12 @@
 				78C9EF3E1AE0EF31002C3FD0 /* XFPTab2ndGradeVC.m in Sources */,
 				782E1DD51AE4F8B700A6786E /* XFPSwipeCellDemoCell.m in Sources */,
 				78C9EF3B1AE0EF31002C3FD0 /* XFPHomeTabBarView.m in Sources */,
-				782E1E811AE793E600A6786E /* TKProgressBarView.m in Sources */,
 				782E1DCA1AE4F49900A6786E /* UIImageView+HighlightedWebCache.m in Sources */,
 				78C2F5961ACD1C60001E928F /* DDLog.m in Sources */,
 				782E1DCC1AE4F49900A6786E /* UIView+WebCacheOperation.m in Sources */,
 				782E1E6F1AE74D4F00A6786E /* XFPHerLoadingView.m in Sources */,
 				782E1E081AE7480000A6786E /* NSDate+Operation.m in Sources */,
+				781AE2BE1AE9E6E900B95DBB /* XFPToast.m in Sources */,
 				78C9EF431AE0F218002C3FD0 /* XFPPageCache.m in Sources */,
 				782E1DBF1AE4F49900A6786E /* SDImageCache.m in Sources */,
 				782E1DCB1AE4F49900A6786E /* UIImageView+WebCache.m in Sources */,
@@ -1077,7 +1062,6 @@
 				782E1DB41AE4F49900A6786E /* MJRefreshFooter.m in Sources */,
 				78C2F5A61ACD2CC8001E928F /* XFPBSVC.m in Sources */,
 				78C2F5941ACD1C60001E928F /* DDASLLogger.m in Sources */,
-				782E1E821AE793E600A6786E /* UIView+TKCategory.m in Sources */,
 				78C9EEF51ADF9287002C3FD0 /* XFPAppConfigure.m in Sources */,
 				78C2F5921ACD1C60001E928F /* DDAbstractDatabaseLogger.m in Sources */,
 				782E1DC81AE4F49900A6786E /* UIImage+MultiFormat.m in Sources */,
@@ -1087,11 +1071,9 @@
 				782E1DB31AE4F49900A6786E /* MJRefreshConst.m in Sources */,
 				782E1D601AE4A22500A6786E /* XFPSinglePicPicker.m in Sources */,
 				782E1DF91AE5084700A6786E /* UIViewController+ScrollingNavbar.m in Sources */,
-				782E1E801AE793E600A6786E /* TKProgressAlertView.m in Sources */,
 				782E1DC41AE4F49900A6786E /* SDWebImageManager.m in Sources */,
 				782E1E0A1AE7480000A6786E /* NSString+Formate.m in Sources */,
 				782E1DC21AE4F49900A6786E /* SDWebImageDownloader.m in Sources */,
-				782E1E7F1AE793E600A6786E /* TKAlertCenter.m in Sources */,
 				78C2F5991ACD1C60001E928F /* DDDispatchQueueLogFormatter.m in Sources */,
 				782E1DC31AE4F49900A6786E /* SDWebImageDownloaderOperation.m in Sources */,
 				782E1DBD1AE4F49900A6786E /* MKAnnotationView+WebCache.m in Sources */,

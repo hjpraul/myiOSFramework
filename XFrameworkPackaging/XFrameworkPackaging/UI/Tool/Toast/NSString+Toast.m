@@ -7,10 +7,10 @@
 //
 
 #import "NSString+Toast.h"
-#import "TKAlertCenter.h"
+#import "XFPToast.h"
 
 @implementation NSString (Toast)
 - (void)toast{
-    [[TKAlertCenter defaultCenter] postAlertWithMessage:self];
+    [XFPToast showWithText:self];
 }
 @end
