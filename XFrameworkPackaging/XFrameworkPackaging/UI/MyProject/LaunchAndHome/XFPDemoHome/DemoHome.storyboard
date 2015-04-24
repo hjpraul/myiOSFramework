@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H9S-qB-NHl">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--NaVC-->
+        <scene sceneID="Xkg-dn-bmG">
+            <objects>
+                <navigationController id="H9S-qB-NHl" customClass="XFPBSNaVC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qvg-WB-Fxz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bSM-bG-USo" kind="relationship" relationship="rootViewController" id="jhX-y4-t1b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmZ-Tb-5JA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="-57"/>
+        </scene>
+        <!--自有框架Demo-->
+        <scene sceneID="R1k-43-b4K">
+            <objects>
+                <viewController storyboardIdentifier="XFPDemoHomeVC" id="bSM-bG-USo" customClass="XFPDemoHomeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1S3-eL-HTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="xsV-VE-oYc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cu4-Bi-Ze3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="31z-j3-0fv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bSM-bG-USo" id="WJE-fc-W3f"/>
+                                    <outlet property="delegate" destination="bSM-bG-USo" id="vQR-hs-OI7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="31z-j3-0fv" firstAttribute="top" secondItem="Cu4-Bi-Ze3" secondAttribute="topMargin" id="5BS-Ak-Ktu"/>
+                            <constraint firstAttribute="bottom" secondItem="31z-j3-0fv" secondAttribute="bottom" id="ft6-sz-wXe"/>
+                            <constraint firstItem="31z-j3-0fv" firstAttribute="leading" secondItem="Cu4-Bi-Ze3" secondAttribute="leading" id="gTL-Y4-gGB"/>
+                            <constraint firstAttribute="trailing" secondItem="31z-j3-0fv" secondAttribute="trailing" id="zVb-mx-0MA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="自有框架Demo" id="J5I-2B-M2F"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIe-M1-Pni" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="-57"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

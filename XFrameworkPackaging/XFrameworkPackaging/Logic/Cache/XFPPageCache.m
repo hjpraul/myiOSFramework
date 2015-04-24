@@ -11,10 +11,19 @@
 @implementation XFPPageCache
 DEF_SINGLETON(XFPPageCache)
 
-#ifdef XFP_USE_TAB_HOME
+#if XFP_USE_TAB_HOME
 - (XFPTabHomeVC *)homeVC{
     if (!_homeVC) {
         _homeVC = [UIStoryboard storyboardWithName:@"XFPTabHome" bundle:nil].instantiateInitialViewController;
+    }
+    
+    return _homeVC;
+}
+
+#else
+- (XFPDemoHomeVC *)homeVC{
+    if (!_homeVC) {
+        _homeVC = [[UIStoryboard storyboardWithName:@"DemoHome" bundle:nil] instantiateViewControllerWithIdentifier:@"XFPDemoHomeVC"];
     }
     
     return _homeVC;

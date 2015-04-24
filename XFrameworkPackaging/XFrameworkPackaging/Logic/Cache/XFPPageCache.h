@@ -7,16 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#ifdef XFP_USE_TAB_HOME
+#if XFP_USE_TAB_HOME
 #import "XFPTabHomeVC.h"
+#else
+#import "XFPDemoHomeVC.h"
 #endif
 
 #define XFP_PAGE_CACHE  ([XFPPageCache sharedInstance])
 @interface XFPPageCache : NSObject
 AS_SINGLETON(XFPPageCache)
 
-#ifdef XFP_USE_TAB_HOME
+#if XFP_USE_TAB_HOME
 @property (strong, nonatomic) XFPTabHomeVC *homeVC;
+#else
+@property (strong, nonatomic) XFPDemoHomeVC *homeVC;
 #endif
 
 @end

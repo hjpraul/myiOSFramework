@@ -9,7 +9,7 @@
 #ifndef XFrameworkPackaging_XFPConfig_h
 #define XFrameworkPackaging_XFPConfig_h
 
-#define XFP_USE_TAB_HOME    (1)
+#define XFP_USE_TAB_HOME    (0)
 #define XFP_NEED_REMOTE_NOTIFICATION    (1)
 
 #endif

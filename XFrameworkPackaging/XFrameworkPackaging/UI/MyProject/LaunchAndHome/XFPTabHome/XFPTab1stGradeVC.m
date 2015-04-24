@@ -35,7 +35,9 @@
         self.tabBarController.tabBar.translucent = YES;
     }
     
+    #if XFP_USE_TAB_HOME
     [XFP_PAGE_CACHE.homeVC hideCustomTabBar:NO];
+    #endif
 }
 
 - (IBAction)nextBtnClicked:(UIButton *)sender {

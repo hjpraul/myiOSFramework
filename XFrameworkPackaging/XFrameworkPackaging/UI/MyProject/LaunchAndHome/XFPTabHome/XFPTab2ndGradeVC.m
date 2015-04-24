@@ -33,7 +33,9 @@
         self.tabBarController.tabBar.translucent = NO;
     }
     
+    #if XFP_USE_TAB_HOME
     [XFP_PAGE_CACHE.homeVC hideCustomTabBar:YES];
+    #endif
 }
 
 @end
