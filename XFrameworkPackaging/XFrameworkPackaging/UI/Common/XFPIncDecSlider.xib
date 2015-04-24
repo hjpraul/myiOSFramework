@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="QxZ-pA-gak" customClass="XFPIncDecSlider">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5M2-SQ-Met">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_dec.png" translatesAutoresizingMaskIntoConstraints="NO" id="sKO-HS-7MS">
+                    <rect key="frame" x="2" y="39" width="14" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="sKO-HS-7MS" secondAttribute="height" multiplier="7:1" id="n2s-gd-33B"/>
+                    </constraints>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="bg_slider.png" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-cq-aFU">
+                    <rect key="frame" x="19" y="24" width="202" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="SCd-cq-aFU" secondAttribute="height" multiplier="101:16" id="FhB-zO-kWV"/>
+                    </constraints>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_inc.png" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-tG-Vi8">
+                    <rect key="frame" x="223" y="32" width="15" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="K2v-tG-Vi8" secondAttribute="height" multiplier="15:16" id="dID-cq-1bp"/>
+                    </constraints>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_slider_dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="Htj-mf-kbn">
+                    <rect key="frame" x="89" y="9" width="63" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Htj-mf-kbn" secondAttribute="height" multiplier="1:1" id="FWc-7a-Lk5"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5M2-SQ-Met" secondAttribute="bottom" id="0zf-oh-e8r"/>
+                <constraint firstAttribute="centerY" secondItem="Htj-mf-kbn" secondAttribute="centerY" id="2J7-6K-XsD"/>
+                <constraint firstItem="5M2-SQ-Met" firstAttribute="leading" secondItem="QxZ-pA-gak" secondAttribute="leading" id="LeS-t1-YcB"/>
+                <constraint firstItem="5M2-SQ-Met" firstAttribute="top" secondItem="QxZ-pA-gak" secondAttribute="top" id="Png-zP-bAn"/>
+                <constraint firstItem="sKO-HS-7MS" firstAttribute="leading" secondItem="QxZ-pA-gak" secondAttribute="leading" constant="2" id="REy-eE-msL"/>
+                <constraint firstItem="K2v-tG-Vi8" firstAttribute="width" secondItem="5M2-SQ-Met" secondAttribute="width" multiplier="0.0625" id="ScW-1c-s0m"/>
+                <constraint firstItem="Htj-mf-kbn" firstAttribute="width" secondItem="5M2-SQ-Met" secondAttribute="width" multiplier="0.2625" id="SzK-7Z-B12"/>
+                <constraint firstAttribute="centerX" secondItem="Htj-mf-kbn" secondAttribute="centerX" constant="-0.5" id="aMr-Fv-6vZ"/>
+                <constraint firstAttribute="trailing" secondItem="K2v-tG-Vi8" secondAttribute="trailing" constant="2" id="bYK-0K-rL6"/>
+                <constraint firstAttribute="trailing" secondItem="5M2-SQ-Met" secondAttribute="trailing" id="fd8-FL-4ul"/>
+                <constraint firstAttribute="centerY" secondItem="K2v-tG-Vi8" secondAttribute="centerY" id="ng6-wC-CuB"/>
+                <constraint firstAttribute="centerY" secondItem="SCd-cq-aFU" secondAttribute="centerY" id="oY6-pe-NUS"/>
+                <constraint firstAttribute="centerY" secondItem="sKO-HS-7MS" secondAttribute="centerY" id="qED-gD-ZdO"/>
+                <constraint firstAttribute="centerX" secondItem="SCd-cq-aFU" secondAttribute="centerX" id="raX-oc-Fxp"/>
+                <constraint firstItem="5M2-SQ-Met" firstAttribute="width" secondItem="SCd-cq-aFU" secondAttribute="width" multiplier="1.18812" id="xnm-db-3xD"/>
+                <constraint firstItem="5M2-SQ-Met" firstAttribute="width" secondItem="sKO-HS-7MS" secondAttribute="width" multiplier="17.1429" id="yXF-5h-LJj"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="moveDot" destination="Htj-mf-kbn" id="7Rb-NV-bb0"/>
+                <outlet property="sliderFramBg" destination="SCd-cq-aFU" id="Q4v-7h-mSB"/>
+            </connections>
+            <point key="canvasLocation" x="334" y="75"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_slider.png" width="202" height="32"/>
+        <image name="icon_dec.png" width="14" height="2"/>
+        <image name="icon_inc.png" width="15" height="16"/>
+        <image name="icon_slider_dot.png" width="63" height="63"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

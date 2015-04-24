@@ -22,4 +22,23 @@
     UIGraphicsEndImageContext();
     return image;
 }
+
++ (UIImage *)imageWithView:(UIView *)view
+{
+//    [view.layer setContentsScale:[[UIScreen mainScreen] scale]];
+    
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 1.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    CGContextSetInterpolationQuality(UIGraphicsGetCurrentContext(), kCGInterpolationHigh);
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+//    UIImageView *currentView = [[UIImageView alloc] initWithImage: img];
+//
+//    //Fix the position to handle status bar and navigation bar
+//    [currentView setFrame:CGRectMake(0, view.frame.origin.y, currentView.frame.size.width, currentView.frame.size.height)];
+    
+    return img;
+}
 @end

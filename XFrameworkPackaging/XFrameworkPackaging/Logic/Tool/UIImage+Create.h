@@ -13,4 +13,6 @@
 // 创建纯色图片
 +(UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
 
+// 视图转图片
++ (UIImage *)imageWithView:(UIView *)view;
 @end

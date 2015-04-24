@@ -123,4 +123,14 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
     
     return img;
 }
+
+- (UIImage *)cropAtRect:(CGRect)rect
+{
+    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+    UIImageView *imageViewCropped = [[UIImageView alloc] initWithImage:[UIImage imageWithCGImage:imageRef]];
+    [imageViewCropped setFrame:rect];
+    
+    CGImageRelease(imageRef);
+    return imageViewCropped.image;
+}
 @end
