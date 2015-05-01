@@ -63,8 +63,8 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
         realSize = newSize;
     }
     
-    UIGraphicsBeginImageContext(newSize);
-    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIGraphicsBeginImageContext(realSize);
+    [self drawInRect:CGRectMake(0, 0, realSize.width, realSize.height)];
     UIImage *newImage=UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return  newImage;
