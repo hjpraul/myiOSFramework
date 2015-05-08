@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BPl-kq-zK3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--NaVC-->
+        <scene sceneID="5gz-g2-SOY">
+            <objects>
+                <navigationController id="BPl-kq-zK3" customClass="XFPBSNaVC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3CG-Et-JYb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kZA-Na-VLE" kind="relationship" relationship="rootViewController" id="5yP-JO-kqz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMD-ol-k7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="483" y="-19"/>
+        </scene>
+        <!--Palette DemoVC-->
+        <scene sceneID="EZS-Vn-t2D">
+            <objects>
+                <viewController id="kZA-Na-VLE" customClass="XFPPaletteDemoVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CC0-GO-pMO"/>
+                        <viewControllerLayoutGuide type="bottom" id="I0H-Ix-66c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tbr-yl-1KQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="bg_palette_circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="YMp-5z-37V" customClass="XFPBSPalette">
+                                <rect key="frame" x="40" y="104" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="BcT-EA-h91"/>
+                                    <constraint firstAttribute="width" secondItem="YMp-5z-37V" secondAttribute="height" multiplier="1:1" id="ayq-W2-CWE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所选颜色预览：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgS-zU-uVv">
+                                <rect key="frame" x="40" y="374" width="112" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="XqX-7Q-FFD"/>
+                                    <constraint firstAttribute="width" constant="112" id="mU7-Hm-cbl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1R-es-fAq">
+                                <rect key="frame" x="160" y="364" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7dl-e5-FII"/>
+                                    <constraint firstAttribute="height" constant="40" id="tSg-Zl-OQu"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARGB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHh-pe-LgP">
+                                <rect key="frame" x="40" y="412" width="264" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ybS-HN-GSh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j1R-es-fAq" firstAttribute="leading" secondItem="IgS-zU-uVv" secondAttribute="trailing" constant="8" id="20M-ge-TQO"/>
+                            <constraint firstItem="MHh-pe-LgP" firstAttribute="top" secondItem="j1R-es-fAq" secondAttribute="bottom" constant="8" id="9nH-YS-pP2"/>
+                            <constraint firstItem="YMp-5z-37V" firstAttribute="trailing" secondItem="MHh-pe-LgP" secondAttribute="trailing" constant="-24" id="EPp-Tf-MR6"/>
+                            <constraint firstAttribute="centerX" secondItem="YMp-5z-37V" secondAttribute="centerX" id="Qd0-eu-HaU"/>
+                            <constraint firstItem="YMp-5z-37V" firstAttribute="top" secondItem="CC0-GO-pMO" secondAttribute="bottom" constant="40" id="WvK-F6-0zL"/>
+                            <constraint firstItem="YMp-5z-37V" firstAttribute="leading" secondItem="MHh-pe-LgP" secondAttribute="leading" id="bCo-YH-1bi"/>
+                            <constraint firstItem="j1R-es-fAq" firstAttribute="centerY" secondItem="IgS-zU-uVv" secondAttribute="centerY" id="e1m-Yn-CHM"/>
+                            <constraint firstItem="YMp-5z-37V" firstAttribute="leading" secondItem="IgS-zU-uVv" secondAttribute="leading" id="sYX-fL-3sB"/>
+                            <constraint firstItem="j1R-es-fAq" firstAttribute="top" secondItem="YMp-5z-37V" secondAttribute="bottom" constant="20" id="w2g-Gq-CT1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="G8D-VY-2aA"/>
+                    <connections>
+                        <outlet property="argbDesc" destination="MHh-pe-LgP" id="LzP-Oz-GDF"/>
+                        <outlet property="colorPreview" destination="j1R-es-fAq" id="2OH-Jm-X9O"/>
+                        <outlet property="paletteView" destination="YMp-5z-37V" id="xY0-li-HJ3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVV-9U-NVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="-19"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_palette_circle.png" width="240" height="240"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

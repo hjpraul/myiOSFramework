@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="z4Y-r4-bAH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="z4Y-r4-bAH">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -119,10 +119,12 @@
                             <constraint firstItem="hDs-mc-Csk" firstAttribute="top" secondItem="nGE-so-gn8" secondAttribute="bottom" id="5j4-PZ-ag2"/>
                             <constraint firstItem="ShF-0D-w1T" firstAttribute="top" secondItem="CLB-AF-cx3" secondAttribute="top" id="MVv-yd-yxm"/>
                             <constraint firstAttribute="trailing" secondItem="ShF-0D-w1T" secondAttribute="trailing" id="Rb7-dc-7I6"/>
+                            <constraint firstItem="Y2c-s5-nL2" firstAttribute="height" secondItem="CLB-AF-cx3" secondAttribute="height" id="Xdr-bH-EQn"/>
                             <constraint firstItem="nGE-so-gn8" firstAttribute="top" secondItem="CLB-AF-cx3" secondAttribute="top" id="ZvO-fZ-ZG7"/>
                             <constraint firstItem="nGE-so-gn8" firstAttribute="leading" secondItem="CLB-AF-cx3" secondAttribute="leading" id="bjh-eD-Lil"/>
                             <constraint firstItem="ShF-0D-w1T" firstAttribute="centerX" secondItem="WQp-L8-zbu" secondAttribute="centerX" id="edr-bI-3t7"/>
                             <constraint firstAttribute="trailing" secondItem="nGE-so-gn8" secondAttribute="trailing" id="swY-Hg-7CN"/>
+                            <constraint firstItem="Y2c-s5-nL2" firstAttribute="width" secondItem="CLB-AF-cx3" secondAttribute="width" multiplier="5" id="tca-Io-o9U"/>
                             <constraint firstItem="WQp-L8-zbu" firstAttribute="top" secondItem="ShF-0D-w1T" secondAttribute="top" constant="144" id="wud-v7-lbs"/>
                         </constraints>
                     </view>

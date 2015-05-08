@@ -24,7 +24,7 @@
     for (int i = 0; i < row*lo; i++) {
         int currRow = i/lo;
         int currLo = i%lo;
-        UIImage *cropImg = [selfImg cropAtRect:CGRectMake(currLo*selfCropWidth, currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
+        UIImage *cropImg = [selfImg subImageAtRect:CGRectMake(currLo*selfCropWidth, currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
         UIImageView *crop = [[UIImageView alloc] initWithFrame:CGRectMake(currLo*selfCropWidth, currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
         crop.image = cropImg;
         [selfCrops addObject:crop];
@@ -42,7 +42,7 @@
     for (int i = 0; i < row*lo; i++) {
         int currRow = i/lo;
         int currLo = i%lo;
-        UIImage *cropImg = [toViewImg cropAtRect:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
+        UIImage *cropImg = [toViewImg subImageAtRect:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
         UIImageView *crop = [[UIImageView alloc] initWithFrame:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
         crop.image = cropImg;
         [toViewCrops addObject:crop];
@@ -116,7 +116,7 @@
     for (int i = 0; i < row*lo; i++) {
         int currRow = i/lo;
         int currLo = i%lo;
-        UIImage *cropImg = [selfImg cropAtRect:CGRectMake(currLo*selfCropWidth, currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
+        UIImage *cropImg = [selfImg subImageAtRect:CGRectMake(currLo*selfCropWidth, currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
         UIImageView *crop = [[UIImageView alloc] initWithFrame:CGRectMake(currLo*selfCropWidth+WIDTH(self), currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
         crop.image = cropImg;
         [selfCrops addObject:crop];
@@ -131,7 +131,7 @@
     for (int i = 0; i < row*lo; i++) {
         int currRow = i/lo;
         int currLo = i%lo;
-        UIImage *cropImg = [toViewImg cropAtRect:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
+        UIImage *cropImg = [toViewImg subImageAtRect:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
         UIImageView *crop = [[UIImageView alloc] initWithFrame:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
         if (currRow%2) { // 向右
             crop.frame = CGRectMake(currLo*selfCropWidth, currRow*selfCropHeight, toViewCropWidth, selfCropHeight);
@@ -187,7 +187,7 @@
     for (int i = 0; i < row*lo; i++) {
         int currRow = i/lo;
         int currLo = i%lo;
-        UIImage *cropImg = [selfImg cropAtRect:CGRectMake(currLo*selfCropWidth, currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
+        UIImage *cropImg = [selfImg subImageAtRect:CGRectMake(currLo*selfCropWidth, currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
         UIImageView *crop = [[UIImageView alloc] initWithFrame:CGRectMake(currLo*selfCropWidth+WIDTH(self), currRow*selfCropHeight, selfCropWidth, selfCropHeight)];
         crop.image = cropImg;
         [selfCrops addObject:crop];
@@ -202,7 +202,7 @@
     for (int i = 0; i < row*lo; i++) {
         int currRow = i/lo;
         int currLo = i%lo;
-        UIImage *cropImg = [toViewImg cropAtRect:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
+        UIImage *cropImg = [toViewImg subImageAtRect:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
         UIImageView *crop = [[UIImageView alloc] initWithFrame:CGRectMake(currLo*toViewCropWidth, currRow*toViewCropHeight, toViewCropWidth, toViewCropHeight)];
         if (currRow%2) { // 向右
             crop.frame = CGRectMake(currLo*selfCropWidth+2*WIDTH(self), currRow*selfCropHeight, toViewCropWidth, selfCropHeight);

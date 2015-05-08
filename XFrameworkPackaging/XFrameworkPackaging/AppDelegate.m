@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "XFPLaunchVC.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // 实例化 lumberjack
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    // 允许颜色
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     
     [self registerRemoteNotification];
     

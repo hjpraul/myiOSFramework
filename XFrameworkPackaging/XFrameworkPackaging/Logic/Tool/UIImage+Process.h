@@ -25,6 +25,4 @@
 // 生成圆角图片
 - (UIImage *)toRoundedRectImageWithSize:(CGSize)size radius:(NSInteger)radius;
 
-// 图片切片
-- (UIImage *)cropAtRect:(CGRect)rect;
 @end

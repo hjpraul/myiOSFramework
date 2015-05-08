@@ -69,6 +69,12 @@
 		782E1E6F1AE74D4F00A6786E /* XFPHerLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E641AE74D4F00A6786E /* XFPHerLoadingView.m */; };
 		782E1E721AE77E6300A6786E /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E711AE77E6300A6786E /* UIView+Loading.m */; };
 		782E1E7E1AE793E600A6786E /* NSString+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E751AE793E600A6786E /* NSString+Toast.m */; };
+		78B312051AF9C93500A4E6D4 /* bg_palette_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312031AF9C93500A4E6D4 /* bg_palette_circle.png */; };
+		78B312061AF9C93500A4E6D4 /* bg_palette_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312041AF9C93500A4E6D4 /* bg_palette_circle@2x.png */; };
+		78B3120E1AFB4B0800A4E6D4 /* PaletteDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B3120D1AFB4B0800A4E6D4 /* PaletteDemo.storyboard */; };
+		78B312121AFB4B3B00A4E6D4 /* XFPPaletteDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B312111AFB4B3B00A4E6D4 /* XFPPaletteDemoVC.m */; };
+		78B312141AFC910E00A4E6D4 /* bg_palette_circle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312131AFC910E00A4E6D4 /* bg_palette_circle@3x.png */; };
+		78B312171AFC927700A4E6D4 /* XFPBSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B312161AFC927700A4E6D4 /* XFPBSPalette.m */; };
 		78C2F54D1ACCE222001E928F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C2F54C1ACCE222001E928F /* main.m */; };
 		78C2F5501ACCE222001E928F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C2F54F1ACCE222001E928F /* AppDelegate.m */; };
 		78C2F5581ACCE222001E928F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C2F5571ACCE222001E928F /* Images.xcassets */; };
@@ -256,6 +262,14 @@
 		782E1E711AE77E6300A6786E /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
 		782E1E741AE793E600A6786E /* NSString+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Toast.h"; sourceTree = "<group>"; };
 		782E1E751AE793E600A6786E /* NSString+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Toast.m"; sourceTree = "<group>"; };
+		78B312031AF9C93500A4E6D4 /* bg_palette_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_palette_circle.png; sourceTree = "<group>"; };
+		78B312041AF9C93500A4E6D4 /* bg_palette_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_palette_circle@2x.png"; sourceTree = "<group>"; };
+		78B3120D1AFB4B0800A4E6D4 /* PaletteDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaletteDemo.storyboard; sourceTree = "<group>"; };
+		78B312101AFB4B3B00A4E6D4 /* XFPPaletteDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPPaletteDemoVC.h; sourceTree = "<group>"; };
+		78B312111AFB4B3B00A4E6D4 /* XFPPaletteDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPPaletteDemoVC.m; sourceTree = "<group>"; };
+		78B312131AFC910E00A4E6D4 /* bg_palette_circle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_palette_circle@3x.png"; sourceTree = "<group>"; };
+		78B312151AFC927700A4E6D4 /* XFPBSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPBSPalette.h; sourceTree = "<group>"; };
+		78B312161AFC927700A4E6D4 /* XFPBSPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPBSPalette.m; sourceTree = "<group>"; };
 		78C2F5471ACCE222001E928F /* XFrameworkPackaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XFrameworkPackaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C2F54B1ACCE222001E928F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78C2F54C1ACCE222001E928F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -399,6 +413,7 @@
 		781AE2D21AEA278F00B95DBB /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				78B3120C1AFB4AD400A4E6D4 /* PaletteDemo */,
 				781AE2D31AEA278F00B95DBB /* LoadingAlertToastDemo */,
 				781AE2D41AEA278F00B95DBB /* MGSwipeTableCellDemo */,
 			);
@@ -605,6 +620,26 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
+		78B312021AF9C93500A4E6D4 /* Palette */ = {
+			isa = PBXGroup;
+			children = (
+				78B312031AF9C93500A4E6D4 /* bg_palette_circle.png */,
+				78B312041AF9C93500A4E6D4 /* bg_palette_circle@2x.png */,
+				78B312131AFC910E00A4E6D4 /* bg_palette_circle@3x.png */,
+			);
+			path = Palette;
+			sourceTree = "<group>";
+		};
+		78B3120C1AFB4AD400A4E6D4 /* PaletteDemo */ = {
+			isa = PBXGroup;
+			children = (
+				78B3120D1AFB4B0800A4E6D4 /* PaletteDemo.storyboard */,
+				78B312101AFB4B3B00A4E6D4 /* XFPPaletteDemoVC.h */,
+				78B312111AFB4B3B00A4E6D4 /* XFPPaletteDemoVC.m */,
+			);
+			path = PaletteDemo;
+			sourceTree = "<group>";
+		};
 		78C2F53E1ACCE222001E928F = {
 			isa = PBXGroup;
 			children = (
@@ -762,6 +797,8 @@
 		78C2F59F1ACD2AD7001E928F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				78B312151AFC927700A4E6D4 /* XFPBSPalette.h */,
+				78B312161AFC927700A4E6D4 /* XFPBSPalette.m */,
 				78C2F5A41ACD2CC8001E928F /* XFPBSVC.h */,
 				78C2F5A51ACD2CC8001E928F /* XFPBSVC.m */,
 				78C9EF451AE11068002C3FD0 /* XFPBSNaVC.h */,
@@ -825,6 +862,7 @@
 		78C9EEDA1ADF5560002C3FD0 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				78B312021AF9C93500A4E6D4 /* Palette */,
 				781AE2C51AEA195200B95DBB /* IncDecSlider */,
 				78C9EF051AE0EC1F002C3FD0 /* TabBar */,
 				78C9EEDB1ADF5560002C3FD0 /* Common */,
@@ -1006,6 +1044,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B312051AF9C93500A4E6D4 /* bg_palette_circle.png in Resources */,
 				781AE2DA1AEA278F00B95DBB /* MGSwipeCellDemo.storyboard in Resources */,
 				78C9EEF81ADF9391002C3FD0 /* XFPAppConfigure.plist in Resources */,
 				78C9EF401AE0EF31002C3FD0 /* XFPTabHome.storyboard in Resources */,
@@ -1024,6 +1063,7 @@
 				78C9EEE81ADF5560002C3FD0 /* welcome03@2x.png in Resources */,
 				78C2F5581ACCE222001E928F /* Images.xcassets in Resources */,
 				78C9EF221AE0EC78002C3FD0 /* bg_tab_lifestyle_sel@2x.png in Resources */,
+				78B312141AFC910E00A4E6D4 /* bg_palette_circle@3x.png in Resources */,
 				78C9EF201AE0EC78002C3FD0 /* bg_tab_axinpay_unsel@2x.png in Resources */,
 				78C9EF0C1AE0EC1F002C3FD0 /* icon_tab_axinpay_sel@2x.png in Resources */,
 				78C9EF0D1AE0EC1F002C3FD0 /* icon_tab_axinpay_unsel@2x.png in Resources */,
@@ -1035,10 +1075,12 @@
 				78C9EEE61ADF5560002C3FD0 /* welcome01@2x.png in Resources */,
 				78C9EF0E1AE0EC1F002C3FD0 /* icon_tab_lifestyle_sel@2x.png in Resources */,
 				782E1E671AE74D4F00A6786E /* loadingError@2x.png in Resources */,
+				78B3120E1AFB4B0800A4E6D4 /* PaletteDemo.storyboard in Resources */,
 				78C9EF251AE0EC78002C3FD0 /* bg_tab_lifestyle_unsel@3x.png in Resources */,
 				78C9EEEA1ADF5560002C3FD0 /* welcome05@2x.png in Resources */,
 				78C9EF3C1AE0EF31002C3FD0 /* XFPHomeTabBarView.xib in Resources */,
 				781AE2DF1AEA281300B95DBB /* DemoHome.storyboard in Resources */,
+				78B312061AF9C93500A4E6D4 /* bg_palette_circle@2x.png in Resources */,
 				78C9EF231AE0EC78002C3FD0 /* bg_tab_lifestyle_sel@3x.png in Resources */,
 				781AE2CC1AEA195200B95DBB /* icon_inc@2x.png in Resources */,
 				78C9EF211AE0EC78002C3FD0 /* bg_tab_axinpay_unsel@3x.png in Resources */,
@@ -1141,6 +1183,7 @@
 				781AE2DC1AEA278F00B95DBB /* XFPSwipeCellDemoVC.m in Sources */,
 				782E1DC71AE4F49900A6786E /* UIImage+GIF.m in Sources */,
 				782E1DBB1AE4F49900A6786E /* UIScrollView+MJRefresh.m in Sources */,
+				78B312171AFC927700A4E6D4 /* XFPBSPalette.m in Sources */,
 				782E1DB41AE4F49900A6786E /* MJRefreshFooter.m in Sources */,
 				78C2F5A61ACD2CC8001E928F /* XFPBSVC.m in Sources */,
 				78C2F5941ACD1C60001E928F /* DDASLLogger.m in Sources */,
@@ -1158,6 +1201,7 @@
 				782E1DC21AE4F49900A6786E /* SDWebImageDownloader.m in Sources */,
 				78C2F5991ACD1C60001E928F /* DDDispatchQueueLogFormatter.m in Sources */,
 				782E1DC31AE4F49900A6786E /* SDWebImageDownloaderOperation.m in Sources */,
+				78B312121AFB4B3B00A4E6D4 /* XFPPaletteDemoVC.m in Sources */,
 				782E1DBD1AE4F49900A6786E /* MKAnnotationView+WebCache.m in Sources */,
 				782E1DB81AE4F49900A6786E /* MJRefreshLegendFooter.m in Sources */,
 			);

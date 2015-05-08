@@ -43,7 +43,8 @@
 }
 
 - (void)customViewDidLoad{
-    _logoTopAlignConst.constant = 144*Main_Screen_Width/320;
+    _logoTopAlignConst.constant = 150*Main_Screen_Width/320;
+    [self.view setNeedsDisplay];
 }
 
 #pragma mark - Private Method

@@ -35,7 +35,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -71,6 +71,9 @@
                 case 1:
                     cell.textLabel.text = @"Loading/Alert/Toast Demo";
                     break;
+                case 2:
+                    cell.textLabel.text = @"Palette Demo";
+                    break;
                 default:
                     break;
             }
@@ -92,6 +95,10 @@
                 case 0:{
                 }break;
                 case 1:{
+                }break;
+                case 2:{
+                    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"PaletteDemo" bundle:nil];
+                    [self.navigationController presentViewController:sb.instantiateInitialViewController animated:YES completion:nil];
                 }break;
                 default:
                     break;

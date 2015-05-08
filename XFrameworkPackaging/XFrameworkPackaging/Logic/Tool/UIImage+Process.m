@@ -106,7 +106,14 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
     
     UIImage *img = self;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(NULL, w, h, 8, 4 * w, colorSpace, kCGImageAlphaPremultipliedFirst);
+    int bitmapInfo;
+    if (isIOS7Above) {
+        bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedFirst;
+    } else {
+        bitmapInfo = kCGImageAlphaPremultipliedLast;
+    }
+    
+    CGContextRef context = CGBitmapContextCreate(NULL, w, h, 8, 4 * w, colorSpace, bitmapInfo);
     CGRect rect = CGRectMake(0, 0, w, h);
     
     CGContextBeginPath(context);
@@ -124,13 +131,4 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
     return img;
 }
 
-- (UIImage *)cropAtRect:(CGRect)rect
-{
-    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
-    UIImageView *imageViewCropped = [[UIImageView alloc] initWithImage:[UIImage imageWithCGImage:imageRef]];
-    [imageViewCropped setFrame:rect];
-    
-    CGImageRelease(imageRef);
-    return imageViewCropped.image;
-}
 @end

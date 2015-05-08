@@ -171,9 +171,9 @@ __singleton__ = nil; \
 // DDLog 预定义
 #define DEBUG 1
 #ifdef DEBUG
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = LOG_LEVEL_INFO;
 #else
-static const int ddLogLevel = LOG_LEVEL_WARN;
+static const int ddLogLevel = LOG_LEVEL_OFF;
 #endif
 
 #endif
