@@ -8,6 +8,9 @@
 
 #import "UIViewController+Loading.h"
 #import "XFPHerLoadingView.h"
+#import "XFPVerLoadingView.h"
+
+#define XFP_LOADING_IS_VERTICAL NO
 
 @implementation UIViewController (Loading)
 
@@ -15,18 +18,34 @@
 #pragma mark - Public Methods
 /**********************************************************************/
 - (void)showLoadingWithMessage:(NSString *)message{
-    [XFPHerLoadingView showLoadingMessage:message inView:self.view];
+    if (XFP_LOADING_IS_VERTICAL) {
+        [XFPVerLoadingView showLoadingMessage:message inView:self.view];
+    } else {
+        [XFPHerLoadingView showLoadingMessage:message inView:self.view];
+    }
 }
 
 - (void)showSuccessWithMessage:(NSString *)message{
-    [XFPHerLoadingView showSuccessMessage:message inView:self.view];
+    if (XFP_LOADING_IS_VERTICAL) {
+        [XFPHerLoadingView showSuccessMessage:message inView:self.view];
+    } else {
+        [XFPHerLoadingView showSuccessMessage:message inView:self.view];
+    }
 }
 
 - (void)showFailedWithMessage:(NSString *)message{
-    [XFPHerLoadingView showFailedMessage:message inView:self.view];
+    if (XFP_LOADING_IS_VERTICAL) {
+        [XFPVerLoadingView showFailedMessage:message inView:self.view];
+    } else {
+        [XFPHerLoadingView showFailedMessage:message inView:self.view];
+    }
 }
 
 - (void)hideLoading{
-    [XFPHerLoadingView hideInView:self.view animated:YES];
+    if (XFP_LOADING_IS_VERTICAL) {
+        [XFPVerLoadingView hideInView:self.view animated:YES];
+    } else {
+        [XFPHerLoadingView hideInView:self.view animated:YES];
+    }
 }
 @end

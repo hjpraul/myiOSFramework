@@ -93,6 +93,8 @@
         case 0:{
             switch (indexPath.row) {
                 case 0:{
+                    [self showLoadingWithMessage:@"加载中..."];
+                    [self performSelector:@selector(showFailedWithMessage:) withObject:@"失败，失败，失败" afterDelay:3];
                 }break;
                 case 1:{
                 }break;

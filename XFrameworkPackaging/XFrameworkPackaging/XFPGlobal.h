@@ -81,7 +81,7 @@
 #define ViewRadius(View, Radius)\
 \
 [View.layer setCornerRadius:(Radius)];\
-[View.layer setMasksToBounds:YES]
+[View.layer setMasksToBounds:NO]
 
 // 设备版本
 #define FSystemVersion          ([[[UIDevice currentDevice] systemVersion] floatValue])

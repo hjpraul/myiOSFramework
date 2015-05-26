@@ -1,19 +1,17 @@
 //
-//  XFPHerLoadingView.m
-//  SchoolPalmUser
+//  XFPVerLoadingView.m
+//  XFrameworkPackaging
 //
-//  Created by hjpraul on 14-8-5.
-//  Copyright (c) 2014年 hjpraul. All rights reserved.
+//  Created by hjpraul on 15/5/25.
+//  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
-#import "XFPHerLoadingView.h"
-
-#define TAG_LOADINGVIEW     191919
+#import "XFPVerLoadingView.h"
+#define TAG_LOADINGVIEW     191918
 #define FONT_MESSAGE        [UIFont systemFontOfSize:15]
-#define SIZE_ICON           20
-#define SIZE_HEIGHT         40
-#define SPACE_TO_CONTAINER  16
-#define HV_SPACE            ((SIZE_HEIGHT-SIZE_ICON)/2)
+#define SIZE_ICON           37  // UIActivityIndicatorViewStyleWhiteLarge的标准大小
+#define SIZE_HEIGHT         95
+#define HV_SPACE            ((SIZE_HEIGHT-15-SIZE_ICON)/3)
 
 // 加载状态(1:加载中、2加载成功、3加载失败)
 typedef NS_ENUM(NSInteger, XFPLoadingType) {
@@ -22,7 +20,7 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
     kXFPLoadingTypeFailed = 3,
 };
 
-@interface XFPHerLoadingView ()
+@interface XFPVerLoadingView ()
 @property (retain, nonatomic) UIView *contentView;
 @property (retain, nonatomic) UIImageView *bgImageView;
 @property (retain, nonatomic) UIActivityIndicatorView *activity;
@@ -31,7 +29,7 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
 @property (assign, nonatomic) XFPLoadingType loadingType;
 @end
 
-@implementation XFPHerLoadingView
+@implementation XFPVerLoadingView
 
 - (id)init{
     return [self initWithFrame:CGRectZero];
@@ -42,7 +40,7 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
     if (self) {
         
         //容器
-        CGRect contentFrame = CGRectMake(0, 0, frame.size.width-SPACE_TO_CONTAINER*2, SIZE_HEIGHT);
+        CGRect contentFrame = CGRectMake(0, 0, frame.size.width-HV_SPACE*2, SIZE_HEIGHT);
         _contentView = [[UIView alloc] initWithFrame:contentFrame];
         [self addSubview:_contentView];
         
@@ -54,24 +52,30 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
         [_contentView addSubview:_bgImageView];
         
         //状态图片
-        CGRect statusFrame = CGRectMake(HV_SPACE,HV_SPACE, SIZE_ICON, contentFrame.size.height-20);
+        CGRect statusFrame = CGRectMake(contentFrame.origin.x+SIZE_ICON/2,
+                                        HV_SPACE,
+                                        SIZE_ICON,
+                                        SIZE_ICON);
         _statusImageView = [[UIImageView alloc] initWithFrame:statusFrame];
         [_statusImageView setContentMode:UIViewContentModeScaleAspectFit];
         [_contentView addSubview:_statusImageView];
         
         // Loading状态图片
-        _activity = [[UIActivityIndicatorView alloc] initWithFrame:_statusImageView.bounds];
+        _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [_activity startAnimating];
         _activity.hidden = YES;
         [_statusImageView addSubview:_activity];
         
         //提示信息
-        CGRect messageFrame = CGRectMake(SIZE_ICON+20,10,contentFrame.size.width-(SIZE_ICON+30),contentFrame.size.height-20);
+        CGRect messageFrame = CGRectMake(contentFrame.origin.x+HV_SPACE,
+                                         contentFrame.origin.y+HV_SPACE*2+SIZE_ICON,
+                                         contentFrame.size.width-HV_SPACE*2,
+                                         20);
         _messageLabel = [[UILabel alloc] initWithFrame:messageFrame];
         [_messageLabel setBackgroundColor:[UIColor clearColor]];
         [_messageLabel setTextAlignment:NSTextAlignmentCenter];
         [_messageLabel setTextColor:[UIColor whiteColor]];
-        [_messageLabel setNumberOfLines:999999];
+        [_messageLabel setNumberOfLines:0];
         [_messageLabel setFont:FONT_MESSAGE];
         [_contentView addSubview:_messageLabel];
     }
@@ -83,11 +87,17 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
     CGRect bgFrame = _contentView.bounds;
     [_bgImageView setFrame:bgFrame];
     
-    CGRect statusFrame = CGRectMake(HV_SPACE+bgFrame.origin.x,HV_SPACE, SIZE_ICON, _contentView.bounds.size.height-HV_SPACE*2);
+    CGRect statusFrame = CGRectMake(bgFrame.origin.x+(bgFrame.size.width-SIZE_ICON)/2,
+                                    HV_SPACE,
+                                    SIZE_ICON,
+                                    SIZE_ICON);
     [_statusImageView setFrame:statusFrame];
     _activity.frame = _statusImageView.bounds;
     
-    CGRect messageFrame = CGRectMake(statusFrame.origin.x+SIZE_ICON+HV_SPACE,HV_SPACE,_contentView.bounds.size.width-(SIZE_ICON+HV_SPACE*3),_contentView.bounds.size.height-HV_SPACE*2);
+    CGRect messageFrame = CGRectMake(bgFrame.origin.x+HV_SPACE,
+                                     bgFrame.origin.y+HV_SPACE*2+SIZE_ICON,
+                                     bgFrame.size.width-HV_SPACE*2,
+                                     15);
     [_messageLabel setFrame:messageFrame];
 }
 
@@ -96,9 +106,9 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
 /**********************************************************************/
 
 + (instancetype)loadingViewInView:(UIView *)view{
-    XFPHerLoadingView *loadingView = (XFPHerLoadingView *)[view viewWithTag:TAG_LOADINGVIEW];
+    XFPVerLoadingView *loadingView = (XFPVerLoadingView *)[view viewWithTag:TAG_LOADINGVIEW];
     if (!loadingView) {
-        loadingView = [[XFPHerLoadingView alloc] init];
+        loadingView = [[XFPVerLoadingView alloc] init];
         loadingView.backgroundColor = [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:0.2f];
         [loadingView setTag:TAG_LOADINGVIEW];
         [loadingView setFrame:view.bounds];
@@ -109,10 +119,10 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
 
 + (CGSize)contentSizeOfMessage:(NSString *)message inView:(UIView *)view{
     CGSize contentSize = [message sizeWithFont:FONT_MESSAGE
-                             constrainedToSize:CGSizeMake(WIDTH(view)-SPACE_TO_CONTAINER*2-SIZE_ICON-HV_SPACE*3, FONT_MESSAGE.pointSize)
+                             constrainedToSize:CGSizeMake(WIDTH(view)-HV_SPACE*2-SIZE_ICON-HV_SPACE*3, FONT_MESSAGE.pointSize)
                                  lineBreakMode:NSLineBreakByWordWrapping];
-    contentSize.width = contentSize.width+SIZE_ICON+HV_SPACE*3;
-    contentSize.height = (contentSize.height<(SIZE_HEIGHT-HV_SPACE*2)?(SIZE_HEIGHT-HV_SPACE*2):contentSize.height)+HV_SPACE*2;
+    contentSize.width = contentSize.width+HV_SPACE*2 < SIZE_HEIGHT ? SIZE_HEIGHT : contentSize.width+HV_SPACE*2;
+    contentSize.height = SIZE_HEIGHT;
     return contentSize;
 }
 
@@ -124,7 +134,7 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
     CGSize contentSize = [self contentSizeOfMessage:message inView:view];
     
     //设置内容
-    XFPHerLoadingView *loadingView = [self loadingViewInView:view];
+    XFPVerLoadingView *loadingView = [self loadingViewInView:view];
     [loadingView.messageLabel setText:message];
     [loadingView.contentView setFrame:CGRectMake((WIDTH(view)-contentSize.width)/2,
                                                  (HEIGHT(view)-contentSize.height)/2,
@@ -140,7 +150,7 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
     CGSize contentSize = [self contentSizeOfMessage:message inView:view];
     
     //设置内容
-    XFPHerLoadingView *loadingView = [self loadingViewInView:view];
+    XFPVerLoadingView *loadingView = [self loadingViewInView:view];
     [loadingView.messageLabel setText:message];
     [loadingView.contentView setFrame:CGRectMake((WIDTH(view)-contentSize.width)/2,
                                                  (HEIGHT(view)-contentSize.height)/2,
@@ -163,7 +173,7 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
     CGSize contentSize = [self contentSizeOfMessage:message inView:view];
     
     //设置内容
-    XFPHerLoadingView *loadingView = [self loadingViewInView:view];
+    XFPVerLoadingView *loadingView = [self loadingViewInView:view];
     [loadingView.messageLabel setText:message];
     [loadingView.contentView setFrame:CGRectMake((WIDTH(view)-contentSize.width)/2,
                                                  (HEIGHT(view)-contentSize.height)/2,
@@ -185,7 +195,7 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
 
 
 + (void)hideInView:(UIView *)view animated:(BOOL)animated{
-    XFPHerLoadingView *loadingView = (XFPHerLoadingView *)[view viewWithTag:TAG_LOADINGVIEW];
+    XFPVerLoadingView *loadingView = (XFPVerLoadingView *)[view viewWithTag:TAG_LOADINGVIEW];
     if (!loadingView) {
         return;
     }
