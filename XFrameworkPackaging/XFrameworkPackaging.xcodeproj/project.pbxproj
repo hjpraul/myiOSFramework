@@ -67,6 +67,8 @@
 		782E1E6F1AE74D4F00A6786E /* XFPHerLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E641AE74D4F00A6786E /* XFPHerLoadingView.m */; };
 		782E1E721AE77E6300A6786E /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E711AE77E6300A6786E /* UIView+Loading.m */; };
 		782E1E7E1AE793E600A6786E /* NSString+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E1E751AE793E600A6786E /* NSString+Toast.m */; };
+		7890DB0E1B15737F00D39398 /* XFPBGLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7890DB0D1B15737F00D39398 /* XFPBGLoadingView.m */; };
+		7890DB111B15744800D39398 /* UIView+BGLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7890DB101B15744800D39398 /* UIView+BGLoading.m */; };
 		78A967941B12D27D003C2E31 /* XFPVerLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A967931B12D27D003C2E31 /* XFPVerLoadingView.m */; };
 		78B312051AF9C93500A4E6D4 /* bg_palette_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312031AF9C93500A4E6D4 /* bg_palette_circle.png */; };
 		78B312061AF9C93500A4E6D4 /* bg_palette_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312041AF9C93500A4E6D4 /* bg_palette_circle@2x.png */; };
@@ -259,6 +261,10 @@
 		782E1E711AE77E6300A6786E /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
 		782E1E741AE793E600A6786E /* NSString+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Toast.h"; sourceTree = "<group>"; };
 		782E1E751AE793E600A6786E /* NSString+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Toast.m"; sourceTree = "<group>"; };
+		7890DB0C1B15737F00D39398 /* XFPBGLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPBGLoadingView.h; sourceTree = "<group>"; };
+		7890DB0D1B15737F00D39398 /* XFPBGLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPBGLoadingView.m; sourceTree = "<group>"; };
+		7890DB0F1B15744800D39398 /* UIView+BGLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BGLoading.h"; sourceTree = "<group>"; };
+		7890DB101B15744800D39398 /* UIView+BGLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BGLoading.m"; sourceTree = "<group>"; };
 		78A9678D1B12C90C003C2E31 /* XFrameworkPackaging-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XFrameworkPackaging-Bridging-Header.h"; sourceTree = "<group>"; };
 		78A967921B12D27D003C2E31 /* XFPVerLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPVerLoadingView.h; sourceTree = "<group>"; };
 		78A967931B12D27D003C2E31 /* XFPVerLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPVerLoadingView.m; sourceTree = "<group>"; };
@@ -592,10 +598,14 @@
 				782E1E641AE74D4F00A6786E /* XFPHerLoadingView.m */,
 				78A967921B12D27D003C2E31 /* XFPVerLoadingView.h */,
 				78A967931B12D27D003C2E31 /* XFPVerLoadingView.m */,
+				7890DB0C1B15737F00D39398 /* XFPBGLoadingView.h */,
+				7890DB0D1B15737F00D39398 /* XFPBGLoadingView.m */,
 				782E1E611AE74D4F00A6786E /* UIViewController+Loading.h */,
 				782E1E621AE74D4F00A6786E /* UIViewController+Loading.m */,
 				782E1E701AE77E6300A6786E /* UIView+Loading.h */,
 				782E1E711AE77E6300A6786E /* UIView+Loading.m */,
+				7890DB0F1B15744800D39398 /* UIView+BGLoading.h */,
+				7890DB101B15744800D39398 /* UIView+BGLoading.m */,
 				78A9678D1B12C90C003C2E31 /* XFrameworkPackaging-Bridging-Header.h */,
 			);
 			path = Loading;
@@ -1170,6 +1180,7 @@
 				782E1DCA1AE4F49900A6786E /* UIImageView+HighlightedWebCache.m in Sources */,
 				78C2F5961ACD1C60001E928F /* DDLog.m in Sources */,
 				782E1DCC1AE4F49900A6786E /* UIView+WebCacheOperation.m in Sources */,
+				7890DB0E1B15737F00D39398 /* XFPBGLoadingView.m in Sources */,
 				782E1E6F1AE74D4F00A6786E /* XFPHerLoadingView.m in Sources */,
 				782E1E081AE7480000A6786E /* NSDate+Operation.m in Sources */,
 				781AE2BE1AE9E6E900B95DBB /* XFPToast.m in Sources */,
@@ -1201,6 +1212,7 @@
 				782E1DC21AE4F49900A6786E /* SDWebImageDownloader.m in Sources */,
 				78C2F5991ACD1C60001E928F /* DDDispatchQueueLogFormatter.m in Sources */,
 				782E1DC31AE4F49900A6786E /* SDWebImageDownloaderOperation.m in Sources */,
+				7890DB111B15744800D39398 /* UIView+BGLoading.m in Sources */,
 				78B312121AFB4B3B00A4E6D4 /* XFPPaletteDemoVC.m in Sources */,
 				782E1DBD1AE4F49900A6786E /* MKAnnotationView+WebCache.m in Sources */,
 				782E1DB81AE4F49900A6786E /* MJRefreshLegendFooter.m in Sources */,
