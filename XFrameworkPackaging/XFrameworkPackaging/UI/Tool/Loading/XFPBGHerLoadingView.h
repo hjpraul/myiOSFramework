@@ -1,5 +1,5 @@
 //
-//  XFPBGLoadingView.h
+//  XFPBGHerLoadingView.h
 //  Unionpay
 //
 //  Created by Qing Xiubin on 13-8-1.
@@ -7,7 +7,7 @@
 //
 
 
-@interface XFPBGLoadingView : UIView
+@interface XFPBGHerLoadingView : UIView
 
 + (void)showLoadingMessage:(NSString *)message inView:(UIView *)view;
 + (void)showFailedMessage:(NSString *)message inView:(UIView *)view;

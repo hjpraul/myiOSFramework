@@ -160,8 +160,8 @@ __singleton__ = nil; \
 #import "XFPBSVC.h"
 #import "XFPBSNaVC.h"
 #import "XFPPageCache.h"
-#import "UIViewController+Loading.h"
 #import "UIView+Loading.h"
+#import "UIView+BGLoading.h"
 #import "NSString+Toast.h"
 
 /******************工具类*****************/

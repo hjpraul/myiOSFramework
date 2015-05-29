@@ -7,19 +7,38 @@
 //
 
 #import "UIView+BGLoading.h"
-#import "XFPBGLoadingView.h"
+#import "XFPBGHerLoadingView.h"
+#import "XFPBGVerLoadingView.h"
+
+#define XFP_BG_LOADING_IS_VERTICAL YES
 
 @implementation UIView (BGLoading)
 - (void)showBGLoadingWithMessage:(NSString *)message{
-    [XFPBGLoadingView showLoadingMessage:message inView:self];
+    if (XFP_BG_LOADING_IS_VERTICAL) {
+        [XFPBGVerLoadingView showLoadingMessage:message inView:self];
+    } else {
+        [XFPBGHerLoadingView showLoadingMessage:message inView:self];
+    }
 }
 - (void)showBGFailedWithMessage:(NSString *)message{
-    [XFPBGLoadingView showFailedMessage:message inView:self];
+    if (XFP_BG_LOADING_IS_VERTICAL) {
+        [XFPBGVerLoadingView showFailedMessage:message inView:self];
+    } else {
+        [XFPBGHerLoadingView showFailedMessage:message inView:self];
+    }
 }
 - (void)showBGNoInfoWithMessage:(NSString *)message{
-    [XFPBGLoadingView showNoInfoMessage:message inView:self];
+    if (XFP_BG_LOADING_IS_VERTICAL) {
+        [XFPBGVerLoadingView showNoInfoMessage:message inView:self];
+    } else {
+        [XFPBGHerLoadingView showNoInfoMessage:message inView:self];
+    }
 }
 - (void)hideBGLoading{
-    [XFPBGLoadingView hideInView:self animated:NO];
+    if (XFP_BG_LOADING_IS_VERTICAL) {
+        [XFPBGVerLoadingView hideInView:self animated:NO];
+    } else {
+        [XFPBGHerLoadingView hideInView:self animated:NO];
+    }
 }
 @end

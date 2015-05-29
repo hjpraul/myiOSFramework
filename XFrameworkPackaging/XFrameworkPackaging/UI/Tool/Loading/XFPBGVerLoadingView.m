@@ -1,35 +1,28 @@
 //
-//  XFPVerLoadingView.m
-//  XFrameworkPackaging
+//  XFPBGVerLoadingView.m
+//  Unionpay
 //
-//  Created by hjpraul on 15/5/25.
-//  Copyright (c) 2015年 hjpraul. All rights reserved.
+//  Created by Qing Xiubin on 13-8-1.
+//  Copyright (c) 2013年 成都中信联通科技有限公司. All rights reserved.
 //
 
-#import "XFPVerLoadingView.h"
-#define TAG_LOADINGVIEW     191918
+#import "XFPBGVerLoadingView.h"
+
+#define TAG_LOADINGVIEW     181817
 #define FONT_MESSAGE        [UIFont systemFontOfSize:15]
 #define SIZE_ICON           37  // UIActivityIndicatorViewStyleWhiteLarge的标准大小
 #define SIZE_HEIGHT         95
 #define HV_SPACE            ((SIZE_HEIGHT-15-SIZE_ICON)/3)
 
-// 加载状态(1:加载中、2加载成功、3加载失败)
-typedef NS_ENUM(NSInteger, XFPLoadingType) {
-    kXFPLoadingTypeLoading = 1,
-    kXFPLoadingTypeSuccess = 2,
-    kXFPLoadingTypeFailed = 3,
-};
 
-@interface XFPVerLoadingView ()
-@property (retain, nonatomic) UIView *contentView;
-@property (retain, nonatomic) UIImageView *bgImageView;
+@interface XFPBGVerLoadingView ()
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) UIImageView *statusImageView;
 @property (retain, nonatomic) UIActivityIndicatorView *activity;
-@property (retain, nonatomic) UIImageView *statusImageView;
-@property (retain, nonatomic) UILabel *messageLabel;
-@property (assign, nonatomic) XFPLoadingType loadingType;
+@property (nonatomic, retain) UILabel *messageLabel;
 @end
 
-@implementation XFPVerLoadingView
+@implementation XFPBGVerLoadingView
 
 - (id)init{
     return [self initWithFrame:CGRectZero];
@@ -42,14 +35,8 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
         //容器
         CGRect contentFrame = CGRectMake(0, 0, frame.size.width-HV_SPACE*2, SIZE_HEIGHT);
         _contentView = [[UIView alloc] initWithFrame:contentFrame];
+        [_contentView setBackgroundColor:[UIColor clearColor]];
         [self addSubview:_contentView];
-        
-        //背景图片
-        CGRect bgFrame = _contentView.bounds;
-        _bgImageView = [[UIImageView alloc] initWithFrame:bgFrame];
-        _bgImageView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.75];
-        ViewRadius(_bgImageView, 6.0);
-        [_contentView addSubview:_bgImageView];
         
         //状态图片
         CGRect statusFrame = CGRectMake(contentFrame.origin.x+SIZE_ICON/2,
@@ -57,11 +44,13 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
                                         SIZE_ICON,
                                         SIZE_ICON);
         _statusImageView = [[UIImageView alloc] initWithFrame:statusFrame];
-        [_statusImageView setContentMode:UIViewContentModeScaleAspectFit];
+        [_statusImageView setContentMode:UIViewContentModeCenter];
+        _statusImageView.contentMode = UIViewContentModeScaleAspectFit;
         [_contentView addSubview:_statusImageView];
         
         // Loading状态图片
         _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _activity.center = CGPointMake(WIDTH(_statusImageView)/2, HEIGHT(_statusImageView)/2);
         [_activity startAnimating];
         _activity.hidden = YES;
         [_statusImageView addSubview:_activity];
@@ -74,29 +63,28 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
         _messageLabel = [[UILabel alloc] initWithFrame:messageFrame];
         [_messageLabel setBackgroundColor:[UIColor clearColor]];
         [_messageLabel setTextAlignment:NSTextAlignmentCenter];
-        [_messageLabel setTextColor:[UIColor whiteColor]];
+        [_messageLabel setTextColor:[UIColor grayColor]];
         [_messageLabel setNumberOfLines:0];
         [_messageLabel setFont:FONT_MESSAGE];
         [_contentView addSubview:_messageLabel];
+        
+        self.backgroundColor = [UIColor redColor];
+        _contentView.backgroundColor = [UIColor blueColor];
     }
     return self;
 }
 
 - (void)layoutSubviews{
     
-    CGRect bgFrame = _contentView.bounds;
-    [_bgImageView setFrame:bgFrame];
-    
-    CGRect statusFrame = CGRectMake(bgFrame.origin.x+(bgFrame.size.width-SIZE_ICON)/2,
+    CGRect statusFrame = CGRectMake(_contentView.bounds.origin.x+(_contentView.bounds.size.width-SIZE_ICON)/2,
                                     HV_SPACE,
                                     SIZE_ICON,
                                     SIZE_ICON);
     [_statusImageView setFrame:statusFrame];
-    _activity.frame = _statusImageView.bounds;
     
-    CGRect messageFrame = CGRectMake(bgFrame.origin.x+HV_SPACE,
-                                     bgFrame.origin.y+HV_SPACE*2+SIZE_ICON,
-                                     bgFrame.size.width-HV_SPACE*2,
+    CGRect messageFrame = CGRectMake(_contentView.bounds.origin.x+HV_SPACE,
+                                     _contentView.bounds.origin.y+HV_SPACE*2+SIZE_ICON,
+                                     _contentView.bounds.size.width-HV_SPACE*2,
                                      15);
     [_messageLabel setFrame:messageFrame];
 }
@@ -105,11 +93,10 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
 #pragma mark - Private Methods
 /**********************************************************************/
 
-+ (instancetype)loadingViewInView:(UIView *)view{
-    XFPVerLoadingView *loadingView = (XFPVerLoadingView *)[view viewWithTag:TAG_LOADINGVIEW];
++ (XFPBGVerLoadingView *)loadingViewInView:(UIView *)view{
+    XFPBGVerLoadingView *loadingView = (XFPBGVerLoadingView *)[view viewWithTag:TAG_LOADINGVIEW];
     if (!loadingView) {
-        loadingView = [[XFPVerLoadingView alloc] init];
-        loadingView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2f];
+        loadingView = [[XFPBGVerLoadingView alloc] init];
         [loadingView setTag:TAG_LOADINGVIEW];
         [loadingView setFrame:view.bounds];
         [view addSubview:loadingView];
@@ -134,68 +121,46 @@ typedef NS_ENUM(NSInteger, XFPLoadingType) {
     CGSize contentSize = [self contentSizeOfMessage:message inView:view];
     
     //设置内容
-    XFPVerLoadingView *loadingView = [self loadingViewInView:view];
+    XFPBGVerLoadingView *loadingView = [self loadingViewInView:view];
     [loadingView.messageLabel setText:message];
     [loadingView.contentView setFrame:CGRectMake((WIDTH(view)-contentSize.width)/2,
                                                  (HEIGHT(view)-contentSize.height)/2,
                                                  contentSize.width,
                                                  contentSize.height)];
-    if (loadingView.loadingType != kXFPLoadingTypeLoading) {
-        [loadingView setLoadingType:kXFPLoadingTypeLoading];
-        [loadingView.statusImageView setImage:nil];
-        loadingView.activity.hidden = NO;
-    }
-}
-+ (void)showSuccessMessage:(NSString *)message inView:(UIView *)view{
-    CGSize contentSize = [self contentSizeOfMessage:message inView:view];
     
-    //设置内容
-    XFPVerLoadingView *loadingView = [self loadingViewInView:view];
-    [loadingView.messageLabel setText:message];
-    [loadingView.contentView setFrame:CGRectMake((WIDTH(view)-contentSize.width)/2,
-                                                 (HEIGHT(view)-contentSize.height)/2,
-                                                 contentSize.width,
-                                                 contentSize.height)];
-    if (loadingView.loadingType != kXFPLoadingTypeSuccess) {
-        [loadingView setLoadingType:kXFPLoadingTypeSuccess];
-        [loadingView.statusImageView setImage:[UIImage imageNamed:@"loading_success"]];
-        loadingView.activity.hidden = YES;
-    }
-    
-    //延迟隐藏
-    [UIView animateWithDuration:0.2f delay:1.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        [loadingView setAlpha:0];
-    } completion:^(BOOL finished) {
-        [loadingView removeFromSuperview];
-    }];
+    [loadingView.statusImageView setImage:nil];
+    loadingView.activity.hidden = NO;
 }
 + (void)showFailedMessage:(NSString *)message inView:(UIView *)view{
     CGSize contentSize = [self contentSizeOfMessage:message inView:view];
     
     //设置内容
-    XFPVerLoadingView *loadingView = [self loadingViewInView:view];
+    XFPBGVerLoadingView *loadingView = [self loadingViewInView:view];
     [loadingView.messageLabel setText:message];
     [loadingView.contentView setFrame:CGRectMake((WIDTH(view)-contentSize.width)/2,
                                                  (HEIGHT(view)-contentSize.height)/2,
                                                  contentSize.width,
                                                  contentSize.height)];
-    if (loadingView.loadingType != kXFPLoadingTypeFailed) {
-        [loadingView setLoadingType:kXFPLoadingTypeFailed];
-        [loadingView.statusImageView setImage:[UIImage imageNamed:@"loading_error"]];
-        loadingView.activity.hidden = YES;
-    }
+    [loadingView.statusImageView setImage:[UIImage imageNamed:@"loading_error"]];
+    loadingView.activity.hidden = YES;
+}
++ (void)showNoInfoMessage:(NSString *)message inView:(UIView *)view{
+    CGSize contentSize = [self contentSizeOfMessage:message inView:view];
     
-    //延迟隐藏
-    [UIView animateWithDuration:0.2f delay:1.5f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        [loadingView setAlpha:0];
-    } completion:^(BOOL finished) {
-        [loadingView removeFromSuperview];
-    }];
+    //设置内容
+    XFPBGVerLoadingView *loadingView = [self loadingViewInView:view];
+    [loadingView.messageLabel setText:message];
+    [loadingView.contentView setFrame:CGRectMake((WIDTH(view)-contentSize.width)/2,
+                                                 (HEIGHT(view)-contentSize.height)/2,
+                                                 contentSize.width,
+                                                 contentSize.height)];
+    [loadingView.statusImageView setImage:[UIImage imageNamed:@"loading_error"]];
+    loadingView.activity.hidden = YES;
 }
 
 
 + (void)hideInView:(UIView *)view animated:(BOOL)animated{
-    XFPVerLoadingView *loadingView = (XFPVerLoadingView *)[view viewWithTag:TAG_LOADINGVIEW];
+    XFPBGVerLoadingView *loadingView = (XFPBGVerLoadingView *)[view viewWithTag:TAG_LOADINGVIEW];
     if (!loadingView) {
         return;
     }
