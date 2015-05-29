@@ -1,9 +1,9 @@
 //
 //  XFPBGHerLoadingView.m
-//  Unionpay
+//  XFrameworkPackaging
 //
-//  Created by Qing Xiubin on 13-8-1.
-//  Copyright (c) 2013年 成都中信联通科技有限公司. All rights reserved.
+//  Created by hjpraul on 15/4/16.
+//  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
 #import "XFPBGHerLoadingView.h"

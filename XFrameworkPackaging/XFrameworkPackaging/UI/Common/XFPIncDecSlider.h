@@ -1,9 +1,9 @@
 //
 //  XFPIncDecSlider.h
-//  MobileCRM
+//  XFrameworkPackaging
 //
-//  Created by hjpraul on 12/3/14.
-//  Copyright (c) 2014 hjpraul. All rights reserved.
+//  Created by hjpraul on 15/4/16.
+//  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,9 +1,9 @@
 //
 //  NSDate+Operation.m
-//  SchoolPalmAgent
+//  XFrameworkPackaging
 //
-//  Created by zhax001 on 14-9-11.
-//  Copyright (c) 2014年 zhax. All rights reserved.
+//  Created by hjpraul on 15/4/16.
+//  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
 #import "NSDate+Operation.h"

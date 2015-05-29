@@ -1,8 +1,8 @@
 //
 //  UIColor+Convert.m
-//  CHLightHandle
+//  XFrameworkPackaging
 //
-//  Created by hjpraul on 15/3/19.
+//  Created by hjpraul on 15/4/16.
 //  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 

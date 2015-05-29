@@ -1,9 +1,9 @@
 //
 //  UIImage+Process.m
-//  UnionSYF
+//  XFrameworkPackaging
 //
-//  Created by zhongjin on 14-4-10.
-//  Copyright (c) 2014年 hjpraul. All rights reserved.
+//  Created by hjpraul on 15/4/16.
+//  Copyright (c) 2015年 hjpraul. All rights reserved.
 //
 
 #import "UIImage+Process.h"
