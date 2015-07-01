@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define XFP_APP_CONFIGURE ([XFPAppConfigure shareInstance])
+
 @interface XFPAppConfigure : NSObject
 @property (strong, nonatomic) NSString *serverUrl;
 @end

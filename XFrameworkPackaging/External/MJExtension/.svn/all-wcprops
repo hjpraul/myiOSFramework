@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension
+END
+MJFoundation.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJFoundation.h
+END
+NSObject+MJCoding.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/NSObject+MJCoding.h
+END
+MJFoundation.m
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJFoundation.m
+END
+NSObject+MJCoding.m
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/NSObject+MJCoding.m
+END
+MJExtension.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJExtension.h
+END
+NSString+MJExtension.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/NSString+MJExtension.h
+END
+MJType.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJType.h
+END
+NSString+MJExtension.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/NSString+MJExtension.m
+END
+MJProperty.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJProperty.h
+END
+MJConst.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJConst.h
+END
+MJType.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJType.m
+END
+NSObject+MJProperty.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/NSObject+MJProperty.h
+END
+NSObject+MJKeyValue.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/mobliecrm/!svn/ver/123/iOS/MobileCRM_GY_Orientation/External/MJExtension/NSObject+MJKeyValue.h
+END
+MJProperty.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJProperty.m
+END
+MJConst.m
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/MJConst.m
+END
+NSObject+MJProperty.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/mobliecrm/!svn/ver/122/iOS/MobileCRM_GY_Orientation/External/MJExtension/NSObject+MJProperty.m
+END
+NSObject+MJKeyValue.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/mobliecrm/!svn/ver/123/iOS/MobileCRM_GY_Orientation/External/MJExtension/NSObject+MJKeyValue.m
+END

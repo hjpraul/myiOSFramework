@@ -8,6 +8,7 @@
 
 #import "XFPDemoHomeVC.h"
 #import "UIView+BGLoading.h"
+#import "XFPObjectDaoVC.h"
 
 @interface XFPDemoHomeVC ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -37,7 +38,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -76,6 +77,9 @@
                 case 2:
                     cell.textLabel.text = @"Palette Demo";
                     break;
+                case 3:
+                    cell.textLabel.text = @"Object common dao Demo";
+                    break;
                 default:
                     break;
             }
@@ -102,6 +106,10 @@
                 }break;
                 case 2:{
                     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"PaletteDemo" bundle:nil];
+                    [self.navigationController presentViewController:sb.instantiateInitialViewController animated:YES completion:nil];
+                }break;
+                case 3:{
+                    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ObjectDaoDemo" bundle:nil];
                     [self.navigationController presentViewController:sb.instantiateInitialViewController animated:YES completion:nil];
                 }break;
                 default:
