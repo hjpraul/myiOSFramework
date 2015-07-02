@@ -119,6 +119,9 @@
             self.blackMask = [[UIView alloc]initWithFrame:self.view.bounds];
             self.blackMask.backgroundColor = [UIColor blackColor];
             [self.backgroundView addSubview:_blackMask];
+        } else {    // 管它在不在，先移除后插入。不这样的话在tabbar controller下会有bug
+            [self.backgroundView removeFromSuperview];
+            [self.view.superview insertSubview:self.backgroundView belowSubview:self.view];
         }
         
         self.backgroundView.hidden = NO;
