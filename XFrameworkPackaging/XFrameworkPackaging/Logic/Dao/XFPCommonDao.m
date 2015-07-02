@@ -14,9 +14,16 @@
 #define XFP_DB_PATH_OF_NAME              [PATH_OF_DOCUMENT stringByAppendingPathComponent:@"XFPDao.db"]
 #define XFP_DB_TB_NAME(prefix,className) [NSString stringWithFormat:@"%@_%@",prefix,className]
 
-//#define XFP_FUNCTION_NAMES   @[@""]
-
 @implementation XFPCommonDao
++ (NSString *)columTypeStringWithObject:(NSObject *)obj {
+    if ([obj isKindOfClass:[NSNumber class]]) {
+        return @"DOUBLE";
+    } else if ([obj isKindOfClass:[NSData class]]) {
+        return @"BLOB";
+    } else {
+        return @"TEXT";
+    }
+}
 
 + (void)storeObjects:(NSArray *)objects
               toDBTB:(NSString *)tbNamePrefix{
@@ -51,6 +58,7 @@
         }
         // 列名与数据对象比对，如果数据对象中有列名列表之外的列，则插入
         for (NSString *key in unitDic.allKeys) {
+            NSObject *value = [unitDic objectForKey:key];
             BOOL hasKey = NO;
             for (NSString *columnName in columnNames) {
                 if ([columnName isEqualToString:key]) {
@@ -61,7 +69,7 @@
                 }
             }
             if (!hasKey) {
-                NSString *insertColumnSql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN '%@' VARCHAR",XFP_DB_TB_NAME(tbNamePrefix,className),key];
+                NSString *insertColumnSql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN '%@' %@",XFP_DB_TB_NAME(tbNamePrefix,className),key,[self columTypeStringWithObject:value]];
                 if (![db executeUpdate:insertColumnSql]) {
                     goto completed;
                 }
@@ -71,8 +79,8 @@
         // 如果表不存在，新建表
         NSMutableString *columDescSql = [NSMutableString string];
         for (NSString *key in unitDic.allKeys) {
-//            id obj = SAFE_PARSE_DICT(dic, key);
-            [columDescSql appendFormat:@", '%@' VARCHAR",key];
+            NSObject *value = [unitDic objectForKey:key];
+            [columDescSql appendFormat:@", '%@' %@",key,[self columTypeStringWithObject:value]];
         }
         NSString *createSql = [NSString stringWithFormat:@"CREATE  TABLE  IF NOT EXISTS '%@' ('autoIncID' INTEGER PRIMARY KEY AUTOINCREMENT%@)",XFP_DB_TB_NAME(tbNamePrefix,className),columDescSql];
         if (![db executeUpdate:createSql]) {
@@ -88,14 +96,16 @@
         for (NSString *key in objDic.allKeys) {
             [columnNamesSql appendFormat:@"'%@',",key];
             id value = SAFE_PARSE_DICT(objDic, key);
-            NSString *valueStr = nil;
+            id realVal = nil;
             ///TODO:暂时都转换成String
-            if (value) {
-                valueStr = [value JSONString];
+            if ([value isKindOfClass:[NSDictionary class]] || [value isKindOfClass:[NSArray class]]) {
+                realVal = [value JSONString];
+            } else if (0) {
+//                realVal = value;
             } else {
-                valueStr = @"";
+                realVal = value;
             }
-            [columnValuesSql appendFormat:@"'%@',",valueStr];
+            [columnValuesSql appendFormat:@"'%@',",realVal];
         }
         if (columnNamesSql.length > 0) {
             [columnNamesSql deleteCharactersInRange:NSMakeRange(columnNamesSql.length-1, 1)];
@@ -121,6 +131,11 @@ completed:
     FMDatabase *db = [FMDatabase databaseWithPath:XFP_DB_PATH_OF_NAME];
     if (![db open]) {
         NSLog(@"数据打开失败");
+        return nil;
+    }
+    
+    if (![db tableExists:XFP_DB_TB_NAME(tbNamePrefix,className)]) {
+        [db close];
         return nil;
     }
     

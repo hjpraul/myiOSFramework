@@ -26,6 +26,8 @@
 
 @interface testModel3 : NSObject<MJKeyValue,XFPDaoModelDelegate>
 @property (strong, nonatomic) NSString *name;
+@property (assign, nonatomic) NSInteger index;
+@property (assign, nonatomic) CGFloat amount;
 @property (strong, nonatomic) testModel1 *model1;
 @property (strong, nonatomic) NSArray *mode2s;
 @property (strong, nonatomic) NSArray *stringModels;
@@ -89,6 +91,8 @@
     mode3.stringModels = @[@"1",@"2",@"3",@"4"];
     mode3.model1 = mode1;
     mode3.mode2s = @[mode21,mode22,mode23];
+    mode3.index = 200;
+    mode3.amount = 125.123;
     
     [XFPCommonDao storeObjects:@[mode3] toDBTB:@"test"];
 }
