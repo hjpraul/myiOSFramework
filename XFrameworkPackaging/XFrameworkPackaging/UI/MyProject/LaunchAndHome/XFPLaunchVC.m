@@ -22,11 +22,11 @@
 {
     [super viewDidLoad];
     
-    if (![XFP_LAST_VERSION isEqualToString:APPVERSION]) {   // 新版本
+    if (![[XFPUserDefaults lastVersion] isEqualToString:APPVERSION]) {   // 新版本
         // 新版本初始化
         _splashBg.hidden = YES;
         _welcomScrollView.hidden = NO;
-        XFP_SET_LAST_VERSION;
+        [XFPUserDefaults setLastVersion];
     } else {
         _splashBg.hidden = NO;
         _welcomScrollView.hidden = YES;

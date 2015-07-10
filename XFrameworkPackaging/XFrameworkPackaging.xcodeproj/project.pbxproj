@@ -154,6 +154,7 @@
 		78C9EF401AE0EF31002C3FD0 /* XFPTabHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C9EF3A1AE0EF31002C3FD0 /* XFPTabHome.storyboard */; };
 		78C9EF431AE0F218002C3FD0 /* XFPPageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EF421AE0F218002C3FD0 /* XFPPageCache.m */; };
 		78C9EF471AE11068002C3FD0 /* XFPBSNaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9EF461AE11068002C3FD0 /* XFPBSNaVC.m */; };
+		78D3F6C31B4FB6BA0017DB27 /* XFPUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D3F6C21B4FB6BA0017DB27 /* XFPUserDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -431,6 +432,8 @@
 		78C9EF441AE0F773002C3FD0 /* XFPConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XFPConfig.h; sourceTree = "<group>"; };
 		78C9EF451AE11068002C3FD0 /* XFPBSNaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPBSNaVC.h; sourceTree = "<group>"; };
 		78C9EF461AE11068002C3FD0 /* XFPBSNaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPBSNaVC.m; sourceTree = "<group>"; };
+		78D3F6C11B4FB6BA0017DB27 /* XFPUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFPUserDefaults.h; sourceTree = "<group>"; };
+		78D3F6C21B4FB6BA0017DB27 /* XFPUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFPUserDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +512,8 @@
 			children = (
 				781A1CF81B43D05E00ADA786 /* XFPCommonDao.h */,
 				781A1CF91B43D05E00ADA786 /* XFPCommonDao.m */,
+				78D3F6C11B4FB6BA0017DB27 /* XFPUserDefaults.h */,
+				78D3F6C21B4FB6BA0017DB27 /* XFPUserDefaults.m */,
 			);
 			path = Dao;
 			sourceTree = "<group>";
@@ -1352,6 +1357,7 @@
 				78C2F5AC1ACD2EA5001E928F /* XFPSlidingDrawerView.m in Sources */,
 				782E1E0C1AE7480000A6786E /* UIColor+Convert.m in Sources */,
 				781A1CB51B4244BC00ADA786 /* NSObject+MJKeyValue.m in Sources */,
+				78D3F6C31B4FB6BA0017DB27 /* XFPUserDefaults.m in Sources */,
 				782E1DB31AE4F49900A6786E /* MJRefreshConst.m in Sources */,
 				782E1D601AE4A22500A6786E /* XFPSinglePicPicker.m in Sources */,
 				782E1DF91AE5084700A6786E /* UIViewController+ScrollingNavbar.m in Sources */,
