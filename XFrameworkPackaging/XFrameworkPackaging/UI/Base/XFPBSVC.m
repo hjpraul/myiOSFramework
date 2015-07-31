@@ -37,9 +37,12 @@
 #endif
     
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
-    
-    UIImage *navBGImg = [[UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(600, 320)] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
-    [self.navigationController.navigationBar setBackgroundImage:navBGImg forBarMetrics:UIBarMetricsDefault];
+    if (isIOS7Above) {
+        [self.navigationController.navigationBar setBarTintColor:[UIColor blueColor]];
+    } else {
+        UIImage *navBGImg = [[UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(600, 320)] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
+        [self.navigationController.navigationBar setBackgroundImage:navBGImg forBarMetrics:UIBarMetricsDefault];
+    }
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:20],NSFontAttributeName,[UIColor blackColor],NSForegroundColorAttributeName,nil]];
     
     [self performSelector:@selector(customViewDidLoad) withObject:nil afterDelay:0];

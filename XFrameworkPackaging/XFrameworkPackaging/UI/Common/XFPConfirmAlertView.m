@@ -43,11 +43,10 @@
 */
 
 #pragma mark - Public Method
-
 - (void)showWithNotice:(NSString *)notice
             sureAction:(void(^)(void))sureAction
           cancelAction:(void(^)(void))cancelAction{
-    self.bg.image = [[UIImage imageNamed:@"comm_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5) resizingMode:UIImageResizingModeStretch];
+    self.bg.image = [[UIImage imageNamed:@"bg_comm_alert"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5) resizingMode:UIImageResizingModeStretch];
     self.notice.text = notice;
     self.sureAction = sureAction;
     self.cancelAction = cancelAction;

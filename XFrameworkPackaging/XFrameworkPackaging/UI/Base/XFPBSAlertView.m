@@ -13,8 +13,6 @@ typedef void (^AnimationBlock)();
 typedef void (^AnimationCompletionBlock)(BOOL);
 
 @interface XFPBSAlertView()
-@property (nonatomic, retain) UIWindow *alertWindow;
-@property (nonatomic, retain) UIWindow *previousWindow;
 @property (nonatomic, retain) UIImageView *dimImageView;
 @end
 
@@ -45,27 +43,8 @@ typedef void (^AnimationCompletionBlock)(BOOL);
 }
 
 - (void)initAlert{
-    //解决横屏问题
-//    UIInterfaceOrientation orientation = [[UIApplication sharedApplication]statusBarOrientation];
-//    if (orientation == UIInterfaceOrientationLandscapeLeft) {
-//        CGAffineTransform rotation = CGAffineTransformMakeRotation(3*M_PI/2);
-//        [self setTransform:rotation];
-//    }
-//    
-//    if (orientation == UIInterfaceOrientationLandscapeRight) {
-//        CGAffineTransform rotation = CGAffineTransformMakeRotation(M_PI/2);
-//        [self setTransform:rotation];
-//    }
-//    
-//    if (orientation == UIInterfaceOrientationPortrait) {
-//        CGAffineTransform rotation = CGAffineTransformMakeRotation(M_PI/2);
-//        [self setTransform:rotation];
-//    }
-//    
-//    if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
-//        CGAffineTransform rotation = CGAffineTransformMakeRotation(M_PI/2);
-//        [self setTransform:rotation];
-//    }
+    // 旋转支持
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     
     [self setPresentationStyle:AlertViewPresentationStyleFade];
     [self setDismissalStyle:AlertViewDismissalStyleFade];
@@ -74,35 +53,33 @@ typedef void (^AnimationCompletionBlock)(BOOL);
 }
 
 #pragma mark - Private Method
-- (UIImage *)backgroundGradientImageWithSize:(CGSize)size{
-	CGPoint center = CGPointMake(size.width * 0.5, size.height * 0.5);
-	CGFloat innerRadius = 0;
-    CGFloat outerRadius = sqrtf(size.width * size.width + size.height * size.height) * 0.5;
-    
-	BOOL opaque = NO;
-    UIGraphicsBeginImageContextWithOptions(size, opaque, [[UIScreen mainScreen] scale]);
-	CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    const size_t locationCount = 2;
-    CGFloat locations[locationCount] = { 0.0, 0.8 };
-    CGFloat components[locationCount * 4] = {
-		0.0, 0.0, 0.0, 0.4, // More transparent black
-		0.0, 0.0, 0.0, 0.5  // More opaque black
-	};
-	
-    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorspace, components, locations, locationCount);
-	
-    CGContextDrawRadialGradient(context, gradient, center, innerRadius, center, outerRadius, 0);
-	
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    CGColorSpaceRelease(colorspace);
-    CGGradientRelease(gradient);
-	
-    return image;
-}
+// 旋转支持
+//- (void)deviceOrientationDidChange:(NSNotification *)notification {
+//    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+//    
+//    CGFloat startRotation = [[self valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
+//    CGAffineTransform rotation;
+//    
+//    switch (interfaceOrientation) {
+//        case UIInterfaceOrientationLandscapeLeft:
+//            rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 270.0 / 180.0);
+//            break;
+//            
+//        case UIInterfaceOrientationLandscapeRight:
+//            rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 90.0 / 180.0);
+//            break;
+//            
+//        case UIInterfaceOrientationPortraitUpsideDown:
+//            rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 180.0 / 180.0);
+//            break;
+//            
+//        default:
+//            rotation = CGAffineTransformMakeRotation(-startRotation + 0.0);
+//            break;
+//    }
+//    [self setTransform:rotation];
+//    [_dimImageView setTransform:rotation];
+//}
 
 - (void)performPresentationAnimation{
     switch (self.presentationStyle) {
@@ -148,11 +125,6 @@ typedef void (^AnimationCompletionBlock)(BOOL);
     AnimationCompletionBlock completionBlock = ^(BOOL finished){
         [self.dimImageView removeFromSuperview];
         [self removeFromSuperview];
-        
-        [self.previousWindow makeKeyWindow];
-        [self setPreviousWindow:nil];
-        [self setDimImageView:nil];
-        [self setAlertWindow:nil];
     };
     
     switch (self.dismissalStyle) {
@@ -234,31 +206,23 @@ typedef void (^AnimationCompletionBlock)(BOOL);
 - (void)showWithStyle:(AlertViewPresentationStyle)presentationStyle{
     [self setPresentationStyle:presentationStyle];
     
-    //记住KeyWindow
-    [self setPreviousWindow:[[UIApplication sharedApplication] keyWindow]];
-    
-    //设置AlertWindow
     CGRect bounds = [[UIScreen mainScreen] bounds];
-    UIWindow *window = [[UIWindow alloc] initWithFrame:bounds];
-    [window setWindowLevel:UIWindowLevelAlert];
-    [window makeKeyAndVisible];
-    [self setAlertWindow:window];
     
     //设置遮罩背景
-    UIImage *bgImage = [self backgroundGradientImageWithSize:bounds.size];
+    UIImage *bgImage = [UIImage imageWithColor:[UIColor colorWithWhite:0 alpha:0.5] size:bounds.size];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:bounds];
     [imageView setUserInteractionEnabled:YES];
     [imageView setImage:bgImage];
-    [self setDimImageView:imageView];
-	[self.alertWindow addSubview:imageView];
+    self.dimImageView = imageView;
+    [[UIApplication sharedApplication].windows.firstObject addSubview:_dimImageView];
     
     // 增加点击背景关闭的手势
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgBgTapped:)];
     [imageView addGestureRecognizer:gesture];
     
     //设置提示弹框
-    [self setCenter:CGPointMake(window.bounds.size.width/2, window.bounds.size.height/2)];
-	[self.alertWindow addSubview:self];
+    [self setCenter:CGPointMake(bounds.size.width/2, bounds.size.height/2)];
+	[[UIApplication sharedApplication].windows.firstObject addSubview:self];
     
 	//出入场动画
 	[self performPresentationAnimation];

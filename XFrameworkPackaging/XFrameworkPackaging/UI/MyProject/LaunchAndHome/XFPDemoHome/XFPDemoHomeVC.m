@@ -7,7 +7,7 @@
 //
 
 #import "XFPDemoHomeVC.h"
-#import "UIView+BGLoading.h"
+#import "UIViewController+ScrollingNavbar.h"
 #import "XFPObjectDaoVC.h"
 
 @interface XFPDemoHomeVC ()
@@ -21,6 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setBackButtonVisible:NO];
+    // AMScrollingNavbar init
+    [self followScrollView:_tableView];
+    [self setUseSuperview:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +41,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return 4+20;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -54,7 +57,7 @@
             return @"动画类";
             break;
         default:
-            return nil;
+            return @"test";
             break;
     }
 }
@@ -99,10 +102,10 @@
         case 0:{
             switch (indexPath.row) {
                 case 0:{
-                    [_tableView showBGLoadingWithMessage:@"加载中..."];
-                    [_tableView performSelector:@selector(showBGNoInfoWithMessage:) withObject:@"失败，失败，失败" afterDelay:3];
                 }break;
                 case 1:{
+                    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"LoadingAlertToastDemo" bundle:nil];
+                    [self.navigationController presentViewController:sb.instantiateInitialViewController animated:YES completion:nil];
                 }break;
                 case 2:{
                     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"PaletteDemo" bundle:nil];

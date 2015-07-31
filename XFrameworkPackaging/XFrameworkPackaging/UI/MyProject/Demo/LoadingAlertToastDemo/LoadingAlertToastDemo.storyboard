@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mk1-NU-v3z">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="JSn-7k-5kl">
+            <objects>
+                <navigationController id="mk1-NU-v3z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Few-S3-FuA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZP3-5A-OX7" kind="relationship" relationship="rootViewController" id="Ra0-39-jfI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99X-ZG-MCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-229.86666666666667" y="234.77333333333334"/>
+        </scene>
+        <!--Loading、alert、toast-->
+        <scene sceneID="C85-Xp-E66">
+            <objects>
+                <viewController storyboardIdentifier="XFPLATDemoHomeVC" id="ZP3-5A-OX7" customClass="XFPLATDemoHomeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yyk-xx-ffL"/>
+                        <viewControllerLayoutGuide type="bottom" id="dB4-Dw-G6d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CnG-Ge-sQC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIq-nC-tpR">
+                                <rect key="frame" x="120" y="76" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1RN-td-mAx"/>
+                                    <constraint firstAttribute="width" constant="80" id="w3Y-VN-J3t"/>
+                                </constraints>
+                                <state key="normal" title="loading">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadingBtnClicked:" destination="ZP3-5A-OX7" eventType="touchUpInside" id="qQ7-ve-0ef"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isL-Me-vPG">
+                                <rect key="frame" x="120" y="128" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="U4R-GH-MBJ"/>
+                                    <constraint firstAttribute="width" constant="80" id="VgE-Yh-cIP"/>
+                                </constraints>
+                                <state key="normal" title="alert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="alertBtnClicked:" destination="ZP3-5A-OX7" eventType="touchUpInside" id="CSa-bx-0jq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzB-yb-aPr">
+                                <rect key="frame" x="120" y="180" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="TbQ-TL-uNg"/>
+                                    <constraint firstAttribute="height" constant="40" id="fFz-w7-VeA"/>
+                                </constraints>
+                                <state key="normal" title="toast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toastBtnClicked:" destination="ZP3-5A-OX7" eventType="touchUpInside" id="CdO-Id-2cb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="kzB-yb-aPr" secondAttribute="centerX" id="3Lz-Cu-mmm"/>
+                            <constraint firstItem="XIq-nC-tpR" firstAttribute="top" secondItem="Yyk-xx-ffL" secondAttribute="bottom" constant="12" id="X84-j7-NAp"/>
+                            <constraint firstItem="kzB-yb-aPr" firstAttribute="top" secondItem="isL-Me-vPG" secondAttribute="bottom" constant="12" id="ahk-Ud-bVm"/>
+                            <constraint firstAttribute="centerX" secondItem="isL-Me-vPG" secondAttribute="centerX" id="mRQ-Pq-b4d"/>
+                            <constraint firstItem="isL-Me-vPG" firstAttribute="top" secondItem="XIq-nC-tpR" secondAttribute="bottom" constant="12" id="tjY-Am-6sq"/>
+                            <constraint firstAttribute="centerX" secondItem="XIq-nC-tpR" secondAttribute="centerX" id="wvc-3L-F7a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Loading、alert、toast" id="HOS-mn-6IL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9D-qH-iqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="233.99999999999997"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

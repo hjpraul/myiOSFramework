@@ -19,7 +19,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
     // 实例化 lumberjack
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     // 允许颜色
@@ -32,6 +33,10 @@
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    return UIInterfaceOrientationMaskAll;
 }
 
 #if XFP_NEED_REMOTE_NOTIFICATION
